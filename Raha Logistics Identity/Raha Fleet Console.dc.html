@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F1EA;-webkit-font-smoothing:antialiased} a{color:#15141A;text-decoration-color:#F2A516;text-underline-offset:3px} a:hover{color:#8A5A00}</style>
+</helmet>
+<div style="font-family:'Instrument Sans',sans-serif;color:#15141A;min-height:100vh;display:flex;flex-wrap:wrap">
+
+<aside style="width:220px;flex:none;background:#15141A;color:#F4F1EA;display:flex;flex-direction:column;gap:24px;padding:18px 12px;box-sizing:border-box;min-height:100vh">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px"><svg viewBox="0 0 48 48" width="24" height="24"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#F2A516"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#F4F1EA"></path></svg><span style="font-family:Archivo;font-stretch:125%;font-weight:700;font-size:19px">raha</span><span style="font-family:'JetBrains Mono';font-size:10px;color:#F2A516;margin-left:auto">FLEET</span></div>
+  <div style="background:#24232B;padding:10px;display:flex;gap:10px;align-items:center"><span style="width:32px;height:32px;background:#F4F1EA;color:#15141A;display:grid;place-items:center;font-weight:700;font-size:12px">KT</span><div style="line-height:1.25"><div style="font-size:13px;font-weight:600">Kebede Transport</div><div style="font-size:11px;color:#9A968C">Tesfaye K. · Owner</div></div></div>
+  <nav style="display:flex;flex-direction:column;gap:2px;font-size:14px">
+    <span style="padding:10px;background:#2A2932;border-left:3px solid #F2A516">Fleet board</span>
+    <span style="padding:10px;color:#C9C4B8;display:flex;justify-content:space-between">Trips<span style="font-family:'JetBrains Mono';font-size:12px">4</span></span>
+    <span style="padding:10px;color:#C9C4B8">Trucks</span>
+    <span style="padding:10px;color:#C9C4B8">Drivers</span>
+    <span style="padding:10px;color:#C9C4B8;display:flex;justify-content:space-between">Load offers<span style="font-family:'JetBrains Mono';font-size:12px;color:#F2A516">5</span></span>
+    <span style="padding:10px;color:#C9C4B8">Payments</span>
+    <span style="padding:10px;color:#C9C4B8">Team &amp; roles</span>
+  </nav>
+  <div style="margin-top:auto;padding:0 8px;font-size:12px;color:#9A968C;line-height:1.5">Team: Tesfaye (owner), Rahel (manager), 9 drivers</div>
+</aside>
+
+<main style="flex:1;min-width:0;padding:24px 28px 56px;display:flex;flex-direction:column;gap:24px;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap">
+    <div><div style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">THU 8 OCT · 7 TRUCKS · 9 DRIVERS</div><h1 style="margin:6px 0 0;font-family:Archivo;font-stretch:115%;font-weight:700;font-size:32px;letter-spacing:-0.02em">Fleet board</h1></div>
+    <div style="display:flex;gap:8px"><button style="font:600 13px 'Instrument Sans';background:transparent;border:1.5px solid #15141A;height:40px;padding:0 14px">+ Add truck</button><button style="font:700 13px 'Instrument Sans';background:#F2A516;border:0;height:40px;padding:0 14px">Publish free space</button></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:1px;background:#E3DED3;border:1px solid #E3DED3">
+    <div style="background:#FBFAF7;padding:16px"><div style="font-size:13px;color:#6B675F">On a trip</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px">4</div></div>
+    <div style="background:#FBFAF7;padding:16px"><div style="font-size:13px;color:#6B675F">Available now</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px">2</div></div>
+    <div style="background:#FBFAF7;padding:16px"><div style="font-size:13px;color:#6B675F">Off road</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px">1</div></div>
+    <div style="background:#FBFAF7;padding:16px"><div style="font-size:13px;color:#6B675F">Open space on the road</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px;color:#8A5A00">6.5 t</div></div>
+    <div style="background:#FBFAF7;padding:16px"><div style="font-size:13px;color:#6B675F">Recorded · Meskerem</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px">ETB 612K</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:20px;align-items:start">
+    <section style="background:#FBFAF7;border:1px solid #E3DED3;overflow-x:auto">
+      <div style="min-width:640px">
+        <div style="display:grid;grid-template-columns:120px 1.1fr 1.3fr 1.4fr 110px;gap:14px;padding:12px 18px;border-bottom:1px solid #E3DED3;font-family:'JetBrains Mono';font-size:11px;color:#6B675F;letter-spacing:0.04em"><span>TRUCK</span><span>DRIVER</span><span>NOW</span><span>LOAD</span><span>STATUS</span></div>
+        <sc-for list="{{ trucks }}" as="t" hint-placeholder-count="7">
+          <div style="display:grid;grid-template-columns:120px 1.1fr 1.3fr 1.4fr 110px;gap:14px;padding:14px 18px;border-bottom:1px solid #EDEAE2;align-items:center;font-size:13px">
+            <div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:13px">{{ t.plate }}</div><div style="font-size:11px;color:#6B675F">{{ t.model }}</div></div>
+            <span>{{ t.driver }}</span>
+            <span style="color:#46433D">{{ t.now }}</span>
+            <div style="display:flex;flex-direction:column;gap:4px"><div style="display:flex;height:10px;gap:2px"><div style="flex:{{ t.used }};background:#15141A"></div><div style="flex:{{ t.match }};background:#F2A516"></div><div style="flex:{{ t.free }};background:repeating-linear-gradient(135deg,#E3DED3 0 3px,transparent 3px 6px);border:1px dashed #C9C4B8"></div></div><span style="font-size:11px;color:#6B675F">{{ t.cap }}</span></div>
+            <span style="font-size:11px;font-weight:700;padding:4px 7px;background:{{ t.bg }};color:{{ t.fg }};justify-self:start">{{ t.status }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <section style="background:#15141A;color:#F4F1EA;padding:20px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;gap:10px;align-items:center"><svg viewBox="0 0 48 48" width="22" height="22"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#F2A516"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#F4F1EA"></path></svg><span style="font-family:'JetBrains Mono';font-size:11px;color:#F2A516">LOADS THAT FIT YOUR TRUCKS · 5</span></div>
+        <div style="display:flex;flex-direction:column;gap:1px;background:#34333C">
+          <div style="background:#24232B;padding:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center"><div><div style="font-weight:700">800 kg → Hawassa <span style="font-weight:400;color:#9A968C">for 3-48213</span></div><div style="font-size:12px;color:#C9C4B8">Sheba Agro · fills 2 t spare · ETB 6,400</div></div><span style="font-size:12px;font-weight:700;color:#2F7A55;background:#E2EFE7;padding:4px 8px">Accepted by Abebe</span></div>
+          <div style="background:#24232B;padding:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center"><div><div style="font-weight:700">6,000 kg Hawassa → Addis <span style="font-weight:400;color:#9A968C">return for 3-48213</span></div><div style="font-size:12px;color:#C9C4B8">Ethio Textile · tomorrow 07:00 · ETB 14,000</div></div><button style="font:700 12px 'Instrument Sans';background:#F2A516;border:0;height:34px;padding:0 12px">Assign</button></div>
+          <div style="background:#24232B;padding:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center"><div><div style="font-weight:700">3,200 kg Adama → Dire Dawa <span style="font-weight:400;color:#9A968C">for 3-50917</span></div><div style="font-size:12px;color:#C9C4B8">via Yonas Brokerage · ETB 11,800</div></div><button style="font:700 12px 'Instrument Sans';background:#F2A516;border:0;height:34px;padding:0 12px">Assign</button></div>
+        </div>
+      </section>
+
+      <section style="background:#FBFAF7;border:1px solid #E3DED3;padding:20px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">LOADED vs EMPTY KM · MESKEREM</span><span style="font-size:12px;color:#6B675F">Fleet 71% loaded</span></div>
+        <sc-for list="{{ perf }}" as="p" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:96px minmax(0,1fr) 44px;gap:10px;align-items:center;font-size:12px"><span style="font-family:'JetBrains Mono'">{{ p.plate }}</span><div style="display:flex;height:12px;gap:2px"><div style="flex:{{ p.loaded }};background:#15141A"></div><div style="flex:{{ p.matched }};background:#F2A516"></div><div style="flex:{{ p.empty }};background:repeating-linear-gradient(135deg,#C9C4B8 0 3px,transparent 3px 6px)"></div></div><span style="font-family:'JetBrains Mono';text-align:right">{{ p.pct }}</span></div>
+        </sc-for>
+        <div style="display:flex;gap:16px;font-size:11px;color:#6B675F;flex-wrap:wrap"><span>■ Own contracts</span><span style="color:#8A5A00">■ Raha matches</span><span>▨ Empty</span></div>
+      </section>
+
+      <section style="background:#FBFAF7;border:1px solid #E3DED3;padding:20px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;justify-content:space-between"><span style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">DRIVERS</span><span style="font-size:12px;color:#B4410E;font-weight:600">1 document expiring</span></div>
+        <div style="display:flex;flex-direction:column;font-size:13px">
+          <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #EDEAE2"><span><strong>Abebe Kebede</strong> · app</span><span style="color:#8A5A00;font-weight:600">Insurance 12 days</span></div>
+          <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #EDEAE2"><span><strong>Solomon Getachew</strong> · app</span><span style="color:#1F5A3D">✓ Verified</span></div>
+          <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #EDEAE2"><span><strong>Birhanu Wolde</strong> · Telegram only</span><span style="color:#1F5A3D">✓ Verified</span></div>
+          <div style="display:flex;justify-content:space-between;padding:9px 0"><span><strong>Mekdes Abera</strong> · invited</span><span style="color:#6B675F">Awaiting licence</span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const S = { trip: ['#E3E6F7', '#26338A', 'On trip'], free: ['#FCEBC4', '#5E3E00', 'Available'], load: ['#EDEAE2', '#46433D', 'Loading'], off: ['#F6E2D8', '#8A300A', 'Off road'] };
+    const t = (plate, model, driver, now, used, match, free, cap, k) => ({ plate, model, driver, now, used, match, free, cap, bg: S[k][0], fg: S[k][1], status: S[k][2] });
+    const p = (plate, loaded, matched, empty) => ({ plate, loaded, matched, empty, pct: (loaded + matched) + '%' });
+    return {
+      trucks: [
+        t('3-48213 AA', 'Isuzu FSR · 10 t', 'Abebe Kebede', 'Addis → Hawassa · Meki', 80, 8, 12, '8.8 / 10 t · 1.2 t free', 'trip'),
+        t('3-50917 AA', 'Sino HOWO · 15 t', 'Solomon Getachew', 'Adama yard, back from Djibouti', 0, 0, 100, 'Empty · 15 t free', 'free'),
+        t('3-50922 AA', 'Sino HOWO · 15 t', 'Birhanu Wolde', 'Addis → Dire Dawa · Awash', 100, 0, 0, '15 / 15 t · full', 'trip'),
+        t('3-41108 AA', 'Isuzu NPR · 5 t', 'Yared Mamo', 'Addis → Bahir Dar · Debre Markos', 50, 20, 30, '3.5 / 5 t · 1.5 t free', 'trip'),
+        t('3-41115 AA', 'Isuzu NPR · 5 t', 'Kidist Alemayehu', 'Kality depot', 40, 0, 60, '2 / 5 t · loading', 'load'),
+        t('3-66042 AA', 'FSR · 10 t', 'Daniel Fikre', 'Hawassa → Addis · Shashemene', 62, 0, 38, '6.2 / 10 t · 3.8 t free', 'trip'),
+        t('3-29981 AA', 'Mitsubishi · 8 t', '—', 'Garage, Kality · clutch', 0, 0, 100, 'Not available', 'off'),
+      ],
+      perf: [p('3-48213', 64, 20, 16), p('3-50917', 58, 12, 30), p('3-50922', 81, 0, 19), p('3-41108', 52, 22, 26), p('3-66042', 48, 9, 43)],
+    };
+  }
+}
+</script>
+</body>
+</html>

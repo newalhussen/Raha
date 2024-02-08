@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/industry-37dc6a56-aa49-4d0d-8002-ef72d326eda5/styles.css">
+<script src="_ds/industry-37dc6a56-aa49-4d0d-8002-ef72d326eda5/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@500;700&display=swap">
+<style>body{margin:0;background:var(--color-neutral-200)} a{color:var(--color-accent-700)} a:hover{color:var(--color-accent-900)}</style>
+</helmet>
+<div style="padding:48px;display:flex;flex-direction:column;gap:40px;font-family:var(--font-body);color:var(--color-text);width:max-content">
+<header style="display:flex;align-items:end;gap:48px;max-width:1600px">
+  <div style="display:flex;align-items:center;gap:14px">
+    <div style="width:56px;height:56px;border-radius:14px;background:var(--color-accent-900);display:grid;place-items:center"><svg viewBox="0 0 24 24" width="26" height="26" fill="var(--color-bg)"><rect x="0" y="0" width="8" height="24"></rect><rect x="10" y="0" width="14" height="11" fill="var(--color-accent-400)"></rect><path d="M10 13H16.5L24 24H17.5Z"></path></svg></div>
+    <div><div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">B — Flutter · Android first</div><h1 style="font-size:48px;margin:0;line-height:1">Raha Driver</h1></div>
+  </div>
+  <p style="margin:0;max-width:620px;font-size:15px;text-wrap:pretty">Built for a 5-inch Android on 3G. One primary action per screen, 56 px buttons, Amharic labels under every action verb, and a local queue so a driver can confirm pickup in a dead zone and sync later. Tabs: Home, Jobs, Trip, Earnings, Me.</p>
+  <a href="Raha Index.dc.html" style="font-size:13px;margin-left:auto">Ecosystem index</a>
+</header>
+
+<div style="display:flex;gap:40px;flex-wrap:wrap;max-width:2080px">
+
+<!-- 01 Login -->
+<figure data-screen-label="01 Login" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">01 · Sign in with phone</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-accent-900);color:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>9:41</span><span>3G ▮▮▯</span></div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:32px 24px 24px;gap:24px">
+    <div style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 24 24" width="28" height="28" fill="var(--color-bg)"><rect x="0" y="0" width="8" height="24"></rect><rect x="10" y="0" width="14" height="11" fill="var(--color-accent-400)"></rect><path d="M10 13H16.5L24 24H17.5Z"></path></svg><span style="font-family:var(--font-heading);font-weight:600;font-size:24px;letter-spacing:0.14em">RAHA</span></div>
+    <div style="margin-top:auto"><div style="font-family:var(--font-heading);font-weight:600;font-size:40px;line-height:1.02">Loads on your route.<br>Paid on delivery.</div><div style="font-family:'Noto Sans Ethiopic',sans-serif;font-size:15px;color:var(--color-accent-200);margin-top:8px">በመንገድዎ ላይ ያሉ ጭነቶች</div></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:13px;color:var(--color-accent-200)">Phone number</label><div style="display:flex;height:56px;border:1px solid var(--color-accent-600)"><span style="display:grid;place-items:center;padding:0 14px;border-right:1px solid var(--color-accent-600);font-size:17px">+251</span><span style="display:flex;align-items:center;padding:0 14px;font-size:20px;letter-spacing:0.06em">91 234 5678</span></div></div>
+    <div style="height:56px;background:var(--color-bg);color:var(--color-accent-900);display:grid;place-items:center;font-family:var(--font-heading);font-weight:600;font-size:19px">Send code by SMS</div>
+    <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--color-accent-200)"><span>Get code on Telegram</span><span>አማርኛ / English</span></div>
+  </div>
+</div></figure>
+
+<!-- 02 Home -->
+<figure data-screen-label="02 Home" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">02 · Home — availability and current truck</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>9:41</span><span>3G ▮▮▯</span></div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:16px;padding:12px 18px;overflow:hidden">
+    <div style="display:flex;justify-content:space-between;align-items:center"><div><div class="text-muted" style="font-size:13px">Selam, Abebe</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">3-B 48213 AA · Isuzu FSR</div></div><div style="width:44px;height:44px;border:1px solid var(--color-divider);display:grid;place-items:center;position:relative"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21h4"></path></svg><span style="position:absolute;top:8px;right:9px;width:8px;height:8px;background:var(--color-accent)"></span></div></div>
+    <div style="display:flex;height:64px;border:1px solid var(--color-text)"><div style="flex:1;background:var(--color-text);color:var(--color-bg);display:flex;flex-direction:column;justify-content:center;padding:0 16px"><span style="font-family:var(--font-heading);font-weight:600;font-size:20px">Available</span><span style="font-size:12px;color:var(--color-neutral-400)">Visible to shippers and brokers</span></div><div style="width:96px;display:grid;place-items:center;font-size:14px" class="text-muted">Off duty</div></div>
+    <div class="blueprint" style="padding:16px;display:flex;flex-direction:column;gap:12px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="display:flex;justify-content:space-between;font-size:12px;letter-spacing:0.08em;text-transform:uppercase"><span class="text-muted">Today's route</span><span style="color:var(--color-accent-700)">Departs 14:00</span></div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:28px;line-height:1">Addis Ababa → Hawassa</div>
+      <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;height:20px"><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="border:1px solid var(--color-text)"></span><span style="border:1px solid var(--color-text)"></span></div>
+      <div style="display:flex;justify-content:space-between;font-size:14px"><span>8 t on board</span><strong>2 t free</strong></div>
+    </div>
+    <div style="background:var(--color-accent);color:var(--color-bg);padding:16px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase">New match for your free space</span><span style="font-family:var(--font-heading);font-weight:600;font-size:22px">800 kg · Packaged flour · +ETB 4,200</span><span style="font-size:13px">Pickup Akaki, 6 km from your route</span></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px dashed var(--color-neutral-500);font-size:13px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l20 20M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5-2.7M19 13a10 10 0 0 0-2-1.5M2 8.8a15 15 0 0 1 4.2-2.6M22 8.8A15 15 0 0 0 11 5"></path></svg><span>Last synced 2 min ago. Jobs saved for offline.</span></div>
+  </div>
+  <dc-import name="Driver Tab Bar" active="{{ 0 }}" hint-size="100%,64px"></dc-import>
+</div></figure>
+
+<!-- 03 Jobs -->
+<figure data-screen-label="03 Jobs" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">03 · Available jobs — sorted by fit</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>9:41</span><span>3G ▮▮▯</span></div>
+  <div style="padding:8px 18px 12px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--color-divider)">
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:28px">Jobs</div>
+    <div style="display:flex;border:1px solid var(--color-divider);height:44px;font-size:14px"><span style="flex:1;display:grid;place-items:center;background:var(--color-accent);color:var(--color-bg)">On my route (3)</span><span style="flex:1;display:grid;place-items:center">Return loads (5)</span></div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;overflow:hidden">
+    <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="4">
+      <div style="padding:14px 18px;border-bottom:1px solid var(--color-divider);display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tag tag-accent">{{ j.fit }}</span><span style="font-family:var(--font-heading);font-weight:600;font-size:20px">ETB {{ j.pay }}</span></div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:21px;line-height:1.1">{{ j.route }}</div>
+        <div style="display:flex;gap:14px;font-size:13px" class="text-muted"><span>{{ j.weight }}</span><span>{{ j.cargo }}</span><span>{{ j.when }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+  <dc-import name="Driver Tab Bar" active="{{ 1 }}" hint-size="100%,64px"></dc-import>
+</div></figure>
+
+<!-- 04 Job detail -->
+<figure data-screen-label="04 Job detail" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">04 · Job detail — accept or decline</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>9:41</span><span>3G ▮▮▯</span></div>
+  <div style="display:flex;align-items:center;gap:12px;padding:6px 12px;height:52px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"></path></svg><span style="font-size:14px" class="text-muted">Job RH-20931 · expires in 18 min</span></div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:16px;padding:4px 18px 16px;overflow:hidden">
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="display:grid;grid-template-columns:20px 1fr;gap:12px"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:12px;height:12px;background:var(--color-text);margin-top:6px"></span><span style="flex:1;width:1px;background:var(--color-text)"></span></div><div style="padding-bottom:16px"><div class="text-muted" style="font-size:12px">PICKUP · today 13:00–14:00</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">Akaki Kality, Addis Ababa</div><div style="font-size:13px">Sheba Agro Processing PLC, warehouse 2</div></div></div>
+      <div style="display:grid;grid-template-columns:20px 1fr;gap:12px"><div style="display:flex;justify-content:center"><span style="width:12px;height:12px;border:2px solid var(--color-text);margin-top:6px"></span></div><div><div class="text-muted" style="font-size:12px">DROP-OFF · 275 km · ~5 h</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">Piassa, Hawassa</div><div style="font-size:13px">Lucy Bakery Supplies, receiver Hana Alemu</div></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--color-divider)">
+      <div style="padding:12px;border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Weight</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">800 kg</div></div>
+      <div style="padding:12px;border-bottom:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Cargo</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">32 sacks flour</div></div>
+      <div style="padding:12px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Your free space after</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">1.2 t</div></div>
+      <div style="padding:12px"><div class="text-muted" style="font-size:12px">You earn</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px;color:var(--color-accent-700)">ETB 4,200</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:3px;height:18px"><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:linear-gradient(90deg,var(--color-accent) 80%,transparent 80%);border:1px solid var(--color-accent)"></span><span style="border:1px solid var(--color-text)"></span></div>
+    <div style="font-size:13px" class="text-muted">Paid cash on delivery by receiver. Raha records the payment.</div>
+    <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+      <div style="height:60px;background:var(--color-accent);color:var(--color-bg);display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-family:var(--font-heading);font-weight:600;font-size:20px">Accept job</span><span style="font-family:'Noto Sans Ethiopic',sans-serif;font-size:12px">ተቀበል</span></div>
+      <div style="height:52px;border:1px solid var(--color-divider);display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px">Decline <span style="font-family:'Noto Sans Ethiopic',sans-serif;font-size:12px" class="text-muted">አልቀበልም</span></div>
+    </div>
+  </div>
+</div></figure>
+
+<!-- 05 Trip: go to pickup -->
+<figure data-screen-label="05 Trip to pickup" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">05 · Trip — heading to pickup</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>9:41</span><span>3G ▮▮▯</span></div>
+  <div style="padding:8px 18px 14px;display:flex;flex-direction:column;gap:10px">
+    <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--font-heading);font-weight:600;font-size:26px">RH-20931</span><span class="tag tag-accent">Step 1 of 4</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px"><span style="height:6px;background:var(--color-accent)"></span><span style="height:6px;background:var(--color-neutral-300)"></span><span style="height:6px;background:var(--color-neutral-300)"></span><span style="height:6px;background:var(--color-neutral-300)"></span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);font-size:11px" class="text-muted"><span style="color:var(--color-accent-700);font-weight:700">Go to pickup</span><span>Load</span><span>Drive</span><span>Deliver</span></div>
+  </div>
+  <div class="duotone" style="height:220px;background:var(--color-neutral-300);display:grid;place-items:center;position:relative;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+    <svg viewBox="0 0 320 220" width="100%" height="100%" style="position:absolute;inset:0" preserveAspectRatio="none"><g stroke="var(--color-neutral-400)" stroke-width="1" fill="none"><path d="M0 60H320M0 150H320M80 0V220M230 0V220M0 200L320 20"></path></g><path d="M40 180 L120 150 L200 100 L270 60" stroke="var(--color-text)" stroke-width="3" fill="none"></path><rect x="34" y="174" width="12" height="12" fill="var(--color-text)"></rect><rect x="264" y="54" width="12" height="12" fill="none" stroke="var(--color-text)" stroke-width="3"></rect></svg>
+    <span style="position:absolute;bottom:10px;left:12px;font-size:11px;background:var(--color-bg);padding:3px 8px">Map preview · loads when online</span>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:16px 18px">
+    <div><div class="text-muted" style="font-size:12px">PICKUP · 6.2 km</div><div style="font-family:var(--font-heading);font-weight:600;font-size:24px">Sheba Agro, Akaki Kality</div><div style="font-size:13px">Gate 2, ask for Tesfaye (store keeper)</div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div style="height:52px;border:1px solid var(--color-divider);display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l19-9-9 19-2-8z"></path></svg>Navigate</div><div style="height:52px;border:1px solid var(--color-divider);display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>Call shipper</div></div>
+    <div style="margin-top:auto;height:60px;background:var(--color-accent);color:var(--color-bg);display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-family:var(--font-heading);font-weight:600;font-size:20px">I have arrived at pickup</span><span style="font-family:'Noto Sans Ethiopic',sans-serif;font-size:12px">ደርሻለሁ</span></div>
+  </div>
+  <dc-import name="Driver Tab Bar" active="{{ 2 }}" hint-size="100%,64px"></dc-import>
+</div></figure>
+
+<!-- 06 Pickup photo -->
+<figure data-screen-label="06 Confirm pickup" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">06 · Confirm pickup — photo, works offline</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px;background:var(--color-text);color:var(--color-bg)"><span>9:41</span><span>No signal</span></div>
+  <div style="background:var(--color-text);color:var(--color-bg);padding:8px 18px 10px;font-size:13px;display:flex;gap:8px;align-items:center"><span style="width:8px;height:8px;border:1px solid var(--color-bg)"></span>Offline. Saved on phone, sends when signal returns.</div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:14px;padding:16px 18px">
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:26px">Confirm pickup</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;align-items:center;gap:12px;height:52px;border:1px solid var(--color-divider);padding:0 14px"><span style="width:24px;height:24px;background:var(--color-accent);color:var(--color-bg);display:grid;place-items:center;font-size:14px">✓</span><span style="font-size:15px">32 sacks counted</span></div>
+      <div style="display:flex;align-items:center;gap:12px;height:52px;border:1px solid var(--color-divider);padding:0 14px"><span style="width:24px;height:24px;background:var(--color-accent);color:var(--color-bg);display:grid;place-items:center;font-size:14px">✓</span><span style="font-size:15px">Weight matches 800 kg</span></div>
+    </div>
+    <div class="blueprint" style="height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border-style:dashed"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span style="font-family:var(--font-heading);font-weight:600;font-size:18px">Take photo of loaded cargo</span><span class="text-muted" style="font-size:12px">Compressed to ~120 KB before upload</span></div>
+    <div style="font-size:13px" class="text-muted">Shipper is notified by SMS when you confirm.</div>
+    <div style="margin-top:auto;height:60px;background:var(--color-accent);color:var(--color-bg);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0.45"><span style="font-family:var(--font-heading);font-weight:600;font-size:20px">Confirm pickup &amp; start trip</span><span style="font-size:12px">Add a photo first</span></div>
+  </div>
+</div></figure>
+
+<!-- 07 In transit -->
+<figure data-screen-label="07 In transit" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">07 · In transit — glanceable while parked</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-accent-900);color:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>11:52</span><span>3G ▮▯▯</span></div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:18px;padding:16px 18px">
+    <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-300)">In transit · step 3 of 4</span><span style="font-size:13px;color:var(--color-accent-300)">RH-20931</span></div>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:56px;line-height:0.95">Hawassa<br><span style="color:var(--color-accent-400)">148 km</span></div>
+    <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid var(--color-accent-700)">
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--color-accent-700)"><span style="color:var(--color-accent-300)">Passed</span><span>Modjo · Ziway</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--color-accent-700)"><span style="color:var(--color-accent-300)">Next</span><span>Arsi Negele · Shashamane</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--color-accent-700)"><span style="color:var(--color-accent-300)">On board</span><span>8 t own + 800 kg Raha</span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0"><span style="color:var(--color-accent-300)">Receiver</span><span>Hana Alemu · 0916 44 21 09</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div style="height:56px;border:1px solid var(--color-accent-600);display:grid;place-items:center;font-size:15px">Report delay</div><div style="height:56px;border:1px solid var(--color-accent-600);display:grid;place-items:center;font-size:15px">Call Raha</div></div>
+    <div style="margin-top:auto;height:60px;background:var(--color-bg);color:var(--color-accent-900);display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-family:var(--font-heading);font-weight:600;font-size:20px">Arrived at drop-off</span><span style="font-family:'Noto Sans Ethiopic',sans-serif;font-size:12px">መድረሻ ደርሻለሁ</span></div>
+  </div>
+</div></figure>
+
+<!-- 08 Delivery PIN -->
+<figure data-screen-label="08 Delivery PIN" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">08 · Delivery PIN — from the receiver</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>16:48</span><span>3G ▮▮▯</span></div>
+  <div style="padding:16px 18px;display:flex;flex-direction:column;gap:8px"><div style="font-family:var(--font-heading);font-weight:600;font-size:26px">Ask Hana for the PIN</div><div style="font-size:14px" class="text-muted">She received it by SMS. 4 digits. Works without internet.</div></div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:8px 18px 20px">
+    <div style="height:72px;border:2px solid var(--color-text);display:grid;place-items:center;font-family:var(--font-heading);font-weight:600;font-size:40px">4</div>
+    <div style="height:72px;border:2px solid var(--color-text);display:grid;place-items:center;font-family:var(--font-heading);font-weight:600;font-size:40px">7</div>
+    <div style="height:72px;border:2px solid var(--color-accent);display:grid;place-items:center;font-family:var(--font-heading);font-weight:600;font-size:40px;color:var(--color-accent)">|</div>
+    <div style="height:72px;border:1px solid var(--color-divider)"></div>
+  </div>
+  <div style="flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;border-top:1px solid var(--color-divider);background:var(--color-surface)">
+    <sc-for list="{{ keys }}" as="k" hint-placeholder-count="12"><div style="display:grid;place-items:center;font-family:var(--font-heading);font-weight:600;font-size:28px;border-right:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">{{ k }}</div></sc-for>
+  </div>
+  <div style="padding:12px 18px;font-size:13px;text-align:center" class="text-muted">Receiver not there? <span style="color:var(--color-accent-700);text-decoration:underline">Use photo + signature instead</span></div>
+</div></figure>
+
+<!-- 09 Proof -->
+<figure data-screen-label="09 Delivered" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">09 · Delivered — proof filed</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>16:50</span><span>3G ▮▮▯</span></div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:18px;padding:24px 18px">
+    <div style="width:72px;height:72px;background:var(--color-accent);display:grid;place-items:center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-bg)" stroke-width="1.5"><path d="M5 12l5 5 9-10"></path></svg></div>
+    <div><div style="font-family:var(--font-heading);font-weight:600;font-size:40px;line-height:1">Delivered</div><div style="font-size:15px;margin-top:6px">PIN matched at 16:49. Hana Alemu confirmed 32 sacks.</div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div class="duotone" style="aspect-ratio:1;background:var(--color-neutral-400);display:flex;align-items:end;padding:8px;font-size:11px;color:var(--color-bg)">Pickup · 12:04</div>
+      <div class="duotone" style="aspect-ratio:1;background:var(--color-neutral-500);display:flex;align-items:end;padding:8px;font-size:11px;color:var(--color-bg)">Delivery · 16:49</div>
+    </div>
+    <div style="border:1px solid var(--color-divider);display:flex;flex-direction:column">
+      <div style="display:flex;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--color-divider)"><span>Collect cash from receiver</span><strong style="font-family:var(--font-heading);font-size:20px">ETB 4,200</strong></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 14px;font-size:14px"><span class="text-muted">Raha fee (8%) recorded</span><span>ETB 336</span></div>
+    </div>
+    <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+      <div style="height:60px;background:var(--color-accent);color:var(--color-bg);display:grid;place-items:center;font-family:var(--font-heading);font-weight:600;font-size:20px">I received the cash</div>
+      <div style="height:52px;border:1px solid var(--color-divider);display:grid;place-items:center;font-size:15px">Find a return load from Hawassa</div>
+    </div>
+  </div>
+</div></figure>
+
+<!-- 10 Earnings -->
+<figure data-screen-label="10 Earnings" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">10 · Earnings and completed trips</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>9:41</span><span>3G ▮▮▯</span></div>
+  <div style="padding:8px 18px 16px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--color-divider)">
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:28px">Earnings</div>
+    <div style="display:flex;border:1px solid var(--color-divider);height:40px;font-size:13px"><span style="flex:1;display:grid;place-items:center">Week</span><span style="flex:1;display:grid;place-items:center;background:var(--color-accent);color:var(--color-bg)">Meskerem</span><span style="flex:1;display:grid;place-items:center">All</span></div>
+    <div><div class="text-muted" style="font-size:12px">Raha jobs this month</div><div style="font-family:var(--font-heading);font-weight:600;font-size:48px;line-height:1">ETB 38,650</div><div style="font-size:13px;color:var(--color-accent-700)">11 trips · 6 were return loads</div></div>
+    <div style="display:flex;align-items:end;gap:6px;height:64px"><span style="flex:1;height:40%;background:var(--color-neutral-300)"></span><span style="flex:1;height:65%;background:var(--color-neutral-300)"></span><span style="flex:1;height:30%;background:var(--color-neutral-300)"></span><span style="flex:1;height:90%;background:var(--color-accent)"></span></div>
+  </div>
+  <div style="flex:1;overflow:hidden">
+    <sc-for list="{{ trips }}" as="t" hint-placeholder-count="4">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--color-divider)"><div><div style="font-family:var(--font-heading);font-weight:600;font-size:18px">{{ t.route }}</div><div class="text-muted" style="font-size:12px">{{ t.date }} · {{ t.weight }}</div></div><div style="text-align:right"><div style="font-family:var(--font-heading);font-weight:600;font-size:18px">{{ t.pay }}</div><div style="font-size:12px" class="text-muted">{{ t.state }}</div></div></div>
+    </sc-for>
+  </div>
+  <dc-import name="Driver Tab Bar" active="{{ 3 }}" hint-size="100%,64px"></dc-import>
+</div></figure>
+
+<!-- 11 Notifications -->
+<figure data-screen-label="11 Notifications" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">11 · Notifications — and where they also go</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>9:41</span><span>3G ▮▮▯</span></div>
+  <div style="display:flex;align-items:center;gap:12px;padding:6px 12px;height:52px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"></path></svg><span style="font-family:var(--font-heading);font-weight:600;font-size:22px">Notifications</span></div>
+  <div style="flex:1;overflow:hidden">
+    <sc-for list="{{ notes }}" as="n" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:8px 1fr;gap:12px;padding:14px 18px;border-bottom:1px solid var(--color-divider)"><span style="width:8px;height:8px;margin-top:7px;background:{{ n.dot }}"></span><div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:15px;font-weight:500">{{ n.title }}</div><div style="display:flex;gap:8px;font-size:12px" class="text-muted"><span>{{ n.time }}</span><span>·</span><span>Also sent by {{ n.via }}</span></div></div></div>
+    </sc-for>
+  </div>
+  <div style="margin:12px 18px 16px;padding:14px;border:1px solid var(--color-divider);display:flex;flex-direction:column;gap:6px"><span style="font-family:var(--font-heading);font-weight:600;font-size:16px">Backup channel</span><span style="font-size:13px">If the app is closed for 10 min, job offers go to Telegram, then SMS. Reply 1 to accept.</span></div>
+</div></figure>
+
+<!-- 12 Profile -->
+<figure data-screen-label="12 Profile and vehicle" style="display:flex;flex-direction:column;gap:12px;margin:0">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">12 · Me — profile, vehicle, verification</figcaption>
+<div style="width:360px;height:760px;border:8px solid var(--color-neutral-900);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;background:var(--color-bg)">
+  <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:12px"><span>9:41</span><span>3G ▮▮▯</span></div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:16px;padding:12px 18px;overflow:hidden">
+    <div style="display:flex;gap:14px;align-items:center"><div class="duotone" style="width:64px;height:64px;background:var(--color-neutral-400)"></div><div><div style="font-family:var(--font-heading);font-weight:600;font-size:24px">Abebe Kebede</div><div style="font-size:13px" class="text-muted">Driver at Abay Transport S.C.</div><span class="tag tag-accent" style="margin-top:4px">✓ Verified by Raha</span></div></div>
+    <div style="border:1px solid var(--color-divider)">
+      <div style="padding:12px 14px;border-bottom:1px solid var(--color-divider);font-size:12px;letter-spacing:0.08em;text-transform:uppercase" class="text-muted">Vehicle</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr">
+        <div style="padding:10px 14px;border-bottom:1px solid var(--color-divider);border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Plate</div><div style="font-weight:500">3-B 48213 AA</div></div>
+        <div style="padding:10px 14px;border-bottom:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Model</div><div style="font-weight:500">Isuzu FSR 2019</div></div>
+        <div style="padding:10px 14px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Capacity</div><div style="font-weight:500">10 t · dry box</div></div>
+        <div style="padding:10px 14px"><div class="text-muted" style="font-size:12px">Bolo inspection</div><div style="font-weight:500">Valid to Sene 2019</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ menu }}" as="m" hint-placeholder-count="5"><div style="display:flex;justify-content:space-between;align-items:center;height:52px;border-bottom:1px solid var(--color-divider);font-size:15px"><span>{{ m.label }}</span><span class="text-muted" style="font-size:13px">{{ m.value }} ›</span></div></sc-for>
+    </div>
+  </div>
+  <dc-import name="Driver Tab Bar" active="{{ 4 }}" hint-size="100%,64px"></dc-import>
+</div></figure>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      jobs: [
+        { fit: 'Fills 2 t free space', pay: '4,200', route: 'Akaki → Hawassa', weight: '800 kg', cargo: 'Flour, 32 sacks', when: 'Today 13:00' },
+        { fit: 'On your route', pay: '2,900', route: 'Modjo → Shashamane', weight: '600 kg', cargo: 'Ceramic tiles', when: 'Today 15:30' },
+        { fit: 'Return load', pay: '11,500', route: 'Hawassa → Addis Ababa', weight: '7.5 t', cargo: 'Coffee, washed', when: 'Tomorrow 07:00' },
+        { fit: 'Return load', pay: '3,600', route: 'Hawassa → Adama', weight: '1.4 t', cargo: 'Textile rolls', when: 'Tomorrow 09:00' }
+      ],
+      keys: ['1','2','3','4','5','6','7','8','9','','0','⌫'],
+      trips: [
+        { route: 'Addis → Hawassa', date: 'Today', weight: '800 kg', pay: 'ETB 4,200', state: 'Cash · recorded' },
+        { route: 'Hawassa → Addis', date: 'Mes 24', weight: '7.5 t', pay: 'ETB 11,500', state: 'Transfer · CBE' },
+        { route: 'Addis → Adama', date: 'Mes 21', weight: '2 t', pay: 'ETB 3,800', state: 'telebirr' },
+        { route: 'Modjo → Dire Dawa', date: 'Mes 17', weight: '9 t', pay: 'ETB 19,150', state: 'Transfer · CBE' }
+      ],
+      notes: [
+        { title: 'New match: 800 kg flour to Hawassa fits your free 2 t', time: '2 min', via: 'Telegram', dot: 'var(--color-accent)' },
+        { title: 'Kality Freight assigned you a return load for tomorrow', time: '1 h', via: 'SMS', dot: 'var(--color-accent)' },
+        { title: 'Payment of ETB 11,500 recorded by Abay Transport', time: 'Yesterday', via: 'SMS', dot: 'var(--color-neutral-400)' },
+        { title: 'Your driving licence expires in 30 days', time: 'Mes 22', via: 'SMS', dot: 'var(--color-text)' },
+        { title: 'Pickup photo for RH-20817 synced', time: 'Mes 21', via: 'push only', dot: 'var(--color-neutral-400)' }
+      ],
+      menu: [
+        { label: 'Documents', value: '4 of 4 approved' },
+        { label: 'Usual routes', value: 'Addis–Hawassa' },
+        { label: 'Notifications', value: 'Push, Telegram, SMS' },
+        { label: 'Language', value: 'አማርኛ' },
+        { label: 'Data saver', value: 'On' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

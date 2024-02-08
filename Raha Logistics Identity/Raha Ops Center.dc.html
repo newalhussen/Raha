@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#0F0E13;-webkit-font-smoothing:antialiased} a{color:#F2A516} a:hover{color:#FCEBC4}</style>
+</helmet>
+<div style="font-family:'Instrument Sans',sans-serif;color:#F4F1EA;background:#0F0E13;min-height:100vh;display:flex;flex-direction:column">
+
+<header style="display:flex;align-items:center;gap:24px;padding:0 20px;height:56px;border-bottom:1px solid #2A2932;background:#15141A;flex-wrap:wrap">
+  <div style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 48 48" width="22" height="22"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#F2A516"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#F4F1EA"></path></svg><span style="font-family:Archivo;font-stretch:125%;font-weight:700;font-size:18px">raha</span><span style="font-family:'JetBrains Mono';font-size:10px;color:#15141A;background:#F2A516;padding:2px 6px;margin-left:4px">OPS</span></div>
+  <nav style="display:flex;gap:2px;font-size:13px;flex:1;flex-wrap:wrap">
+    <button onClick="{{ goOverview }}" style="font:500 13px 'Instrument Sans';color:#F4F1EA;background:{{ tabA }};border:0;padding:9px 12px;cursor:pointer">Control room</button>
+    <button onClick="{{ goVerify }}" style="font:500 13px 'Instrument Sans';color:#F4F1EA;background:{{ tabB }};border:0;padding:9px 12px;cursor:pointer">Verification · 17</button>
+    <span style="padding:9px 12px;color:#9A968C">Shipments</span><span style="padding:9px 12px;color:#9A968C">Trucks</span><span style="padding:9px 12px;color:#9A968C">Organizations</span><span style="padding:9px 12px;color:#9A968C">Support · 6</span><span style="padding:9px 12px;color:#9A968C">Disputes · 2</span>
+  </nav>
+  <div style="display:flex;align-items:center;gap:12px;font-size:12px;color:#9A968C"><span style="font-family:'JetBrains Mono'">14:26 EAT</span><span style="width:30px;height:30px;border-radius:50%;background:#F2A516;color:#15141A;display:grid;place-items:center;font-weight:700;font-size:11px">TH</span></div>
+</header>
+
+<sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+<main style="flex:1;padding:20px;display:flex;flex-direction:column;gap:16px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#2A2932;border:1px solid #2A2932">
+    <div style="background:#15141A;padding:14px 16px"><div style="font-size:12px;color:#9A968C">Trips on the road</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px">86</div></div>
+    <div style="background:#15141A;padding:14px 16px"><div style="font-size:12px;color:#9A968C">Open loads</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px">41</div></div>
+    <div style="background:#15141A;padding:14px 16px"><div style="font-size:12px;color:#9A968C">Trucks with space</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px">63</div></div>
+    <div style="background:#15141A;padding:14px 16px"><div style="font-size:12px;color:#9A968C">Matches today</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px;color:#F2A516">58</div></div>
+    <div style="background:#15141A;padding:14px 16px"><div style="font-size:12px;color:#9A968C">Shared-load share</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px">34%</div></div>
+    <div style="background:#15141A;padding:14px 16px"><div style="font-size:12px;color:#9A968C">Late check-ins</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:26px;margin-top:4px;color:#F08A5D">7</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,640px),1fr));gap:16px;align-items:start">
+    <section style="background:#15141A;border:1px solid #2A2932;display:flex;flex-direction:column">
+      <div style="padding:14px 18px;border-bottom:1px solid #2A2932;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.05em;color:#9A968C">CORRIDOR BOARD · TRIPS BY LAST CHECK-IN</span><div style="display:flex;gap:14px;font-size:11px;color:#9A968C"><span style="display:flex;gap:5px;align-items:center"><span style="width:8px;height:8px;background:#F4F1EA"></span>on time</span><span style="display:flex;gap:5px;align-items:center"><span style="width:8px;height:8px;background:#F2A516;border-radius:50%"></span>shared load</span><span style="display:flex;gap:5px;align-items:center"><span style="width:8px;height:8px;background:#F08A5D;transform:rotate(45deg)"></span>late</span></div></div>
+      <div style="padding:8px 18px 18px;display:flex;flex-direction:column">
+        <sc-for list="{{ corridors }}" as="c" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:150px minmax(0,1fr) 70px;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid #24232B">
+            <div><div style="font-weight:600;font-size:14px">{{ c.name }}</div><div style="font-family:'JetBrains Mono';font-size:11px;color:#9A968C">{{ c.km }}</div></div>
+            <div style="position:relative;height:26px">
+              <div style="position:absolute;left:0;right:0;top:12px;height:2px;background:#34333C"></div>
+              <span style="position:absolute;left:0;top:7px;width:12px;height:12px;background:#9A968C"></span><span style="position:absolute;right:0;top:7px;width:12px;height:12px;border:2px solid #9A968C;box-sizing:border-box"></span>
+              <sc-for list="{{ c.dots }}" as="d" hint-placeholder-count="3"><span style="position:absolute;left:{{ d.x }};top:{{ d.y }};width:10px;height:10px;background:{{ d.col }};border-radius:{{ d.r }};transform:{{ d.t }}"></span></sc-for>
+            </div>
+            <span style="font-family:'JetBrains Mono';font-size:13px;text-align:right">{{ c.n }} trips</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:#15141A;border:1px solid #2A2932;display:flex;flex-direction:column">
+      <div style="padding:14px 18px;border-bottom:1px solid #2A2932;display:flex;justify-content:space-between"><span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.05em;color:#9A968C">NEEDS A HUMAN</span><span style="font-size:12px;color:#9A968C">Sorted by urgency</span></div>
+      <sc-for list="{{ issues }}" as="i" hint-placeholder-count="5">
+        <div style="padding:14px 18px;border-bottom:1px solid #24232B;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:start">
+          <span style="font-family:'JetBrains Mono';font-size:10px;font-weight:600;padding:3px 6px;background:{{ i.bg }};color:{{ i.fg }};margin-top:2px">{{ i.kind }}</span>
+          <div><div style="font-weight:600;font-size:14px">{{ i.title }}</div><div style="font-size:12px;color:#9A968C;margin-top:3px;line-height:1.45">{{ i.body }}</div></div>
+          <button style="font:600 12px 'Instrument Sans';background:{{ i.btnBg }};color:{{ i.btnFg }};border:1px solid #F2A516;height:30px;padding:0 10px;white-space:nowrap">{{ i.action }}</button>
+        </div>
+      </sc-for>
+    </section>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px;align-items:start">
+    <section style="background:#15141A;border:1px solid #2A2932">
+      <div style="padding:14px 18px;border-bottom:1px solid #2A2932;display:flex;justify-content:space-between"><span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.05em;color:#9A968C">DELIVERY CONFIRMATIONS · REVIEW</span><span style="font-size:12px;color:#9A968C">Flagged 3 of 61 today</span></div>
+      <div style="padding:16px 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#2A2932 0 8px,#24232B 8px 16px);display:flex;align-items:end;padding:5px"><span style="font-family:'JetBrains Mono';font-size:9px;background:#0F0E13;padding:2px 4px">RH-08761</span></div><span style="font-size:11px;color:#9A968C">PIN ✓ · photo blurry</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#2A2932 0 8px,#24232B 8px 16px);display:flex;align-items:end;padding:5px"><span style="font-family:'JetBrains Mono';font-size:9px;background:#0F0E13;padding:2px 4px">RH-08779</span></div><span style="font-size:11px;color:#F08A5D">Manual confirm · no PIN</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#2A2932 0 8px,#24232B 8px 16px);display:flex;align-items:end;padding:5px"><span style="font-family:'JetBrains Mono';font-size:9px;background:#0F0E13;padding:2px 4px">RH-08790</span></div><span style="font-size:11px;color:#F08A5D">Short count: 28/30 bags</span></div>
+      </div>
+    </section>
+    <section style="background:#15141A;border:1px solid #2A2932;padding:16px 18px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;justify-content:space-between"><span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.05em;color:#9A968C">NETWORK · LAST 8 WEEKS</span><span style="font-size:12px;color:#9A968C">Avg truck load factor</span></div>
+      <div style="display:flex;align-items:end;gap:6px;height:110px">
+        <span style="flex:1;height:52%;background:#34333C"></span><span style="flex:1;height:55%;background:#34333C"></span><span style="flex:1;height:54%;background:#34333C"></span><span style="flex:1;height:59%;background:#34333C"></span><span style="flex:1;height:63%;background:#34333C"></span><span style="flex:1;height:66%;background:#34333C"></span><span style="flex:1;height:70%;background:#34333C"></span><span style="flex:1;height:74%;background:#F2A516"></span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-size:11px;color:#9A968C"><span>52%</span><span style="color:#F2A516">74% this week</span></div>
+    </section>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isVerify }}" hint-placeholder-val="{{ false }}">
+<main style="flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))">
+  <section style="border-right:1px solid #2A2932;background:#15141A">
+    <div style="padding:14px 18px;border-bottom:1px solid #2A2932;display:flex;gap:6px;font-size:12px;flex-wrap:wrap"><span style="padding:6px 10px;background:#F4F1EA;color:#15141A;font-weight:600">Drivers · 9</span><span style="padding:6px 10px;border:1px solid #34333C">Vehicles · 5</span><span style="padding:6px 10px;border:1px solid #34333C">Companies · 3</span></div>
+    <sc-for list="{{ queue }}" as="q" hint-placeholder-count="6">
+      <div style="padding:14px 18px;border-bottom:1px solid #24232B;display:flex;justify-content:space-between;gap:10px;background:{{ q.bg }};border-left:3px solid {{ q.edge }}">
+        <div><div style="font-weight:600;font-size:14px">{{ q.name }}</div><div style="font-size:12px;color:#9A968C">{{ q.org }}</div></div>
+        <span style="font-family:'JetBrains Mono';font-size:11px;color:#9A968C">{{ q.age }}</span>
+      </div>
+    </sc-for>
+  </section>
+  <section style="grid-column:span 2;padding:24px;display:flex;flex-direction:column;gap:20px;min-width:0">
+    <div style="display:flex;justify-content:space-between;align-items:start;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;gap:14px;align-items:center"><span style="width:56px;height:56px;border-radius:50%;background:#34333C;display:grid;place-items:center;font-weight:700">MA</span><div><div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:24px">Mekdes Abera</div><div style="font-size:13px;color:#9A968C">Driver · invited by Kebede Transport · +251 922 418 006</div></div></div>
+      <div style="display:flex;gap:8px"><button style="font:600 13px 'Instrument Sans';background:transparent;color:#F4F1EA;border:1px solid #6B675F;height:40px;padding:0 14px">Request re-upload</button><button style="font:700 13px 'Instrument Sans';background:#F2A516;color:#15141A;border:0;height:40px;padding:0 16px">Approve driver</button></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+      <div style="background:#15141A;border:1px solid #2A2932;padding:12px;display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1.6;background:repeating-linear-gradient(135deg,#2A2932 0 10px,#24232B 10px 20px);display:grid;place-items:center;font-size:12px;color:#9A968C">Driving licence · front</div><div style="display:flex;justify-content:space-between;font-size:12px"><span>Grade 5 (Heavy truck)</span><span style="color:#7CC4A0">✓ readable</span></div></div>
+      <div style="background:#15141A;border:1px solid #2A2932;padding:12px;display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1.6;background:repeating-linear-gradient(135deg,#2A2932 0 10px,#24232B 10px 20px);display:grid;place-items:center;font-size:12px;color:#9A968C">Fayda national ID</div><div style="display:flex;justify-content:space-between;font-size:12px"><span>Name matches</span><span style="color:#7CC4A0">✓</span></div></div>
+      <div style="background:#15141A;border:1px solid #F08A5D;padding:12px;display:flex;flex-direction:column;gap:10px"><div style="aspect-ratio:1.6;background:repeating-linear-gradient(135deg,#2A2932 0 10px,#24232B 10px 20px);display:grid;place-items:center;font-size:12px;color:#9A968C">Selfie with licence</div><div style="display:flex;justify-content:space-between;font-size:12px"><span>Face partly covered</span><span style="color:#F08A5D">Check</span></div></div>
+    </div>
+    <div style="background:#15141A;border:1px solid #2A2932;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px">
+      <div style="padding:14px;border-right:1px solid #2A2932"><div style="font-size:12px;color:#9A968C">Licence number</div><div style="font-family:'JetBrains Mono';margin-top:4px">AA-05-118 204</div></div>
+      <div style="padding:14px;border-right:1px solid #2A2932"><div style="font-size:12px;color:#9A968C">Expires</div><div style="font-family:'JetBrains Mono';margin-top:4px">2028-03-14</div></div>
+      <div style="padding:14px;border-right:1px solid #2A2932"><div style="font-size:12px;color:#9A968C">Assigned truck</div><div style="font-family:'JetBrains Mono';margin-top:4px">3-41115 AA</div></div>
+      <div style="padding:14px"><div style="font-size:12px;color:#9A968C">Org verified</div><div style="margin-top:4px;color:#7CC4A0">✓ Kebede Transport</div></div>
+    </div>
+    <div style="font-size:13px;color:#9A968C;line-height:1.5">Approval sends the driver an SMS and Telegram message, and lets Kebede Transport assign trips. Every decision is logged with reviewer and time.</div>
+  </section>
+</main>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startTab&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overview&quot;,&quot;verify&quot;],&quot;default&quot;:&quot;overview&quot;,&quot;tsType&quot;:&quot;'overview'|'verify'&quot;}}">
+class Component extends DCLogic {
+  state = { tab: this.props.startTab ?? 'overview' };
+  renderVals() {
+    const tab = this.state.tab;
+    const dot = (x, k) => ({ x: x + '%', y: k === 'late' ? '8px' : '8px', col: k === 'late' ? '#F08A5D' : k === 'shared' ? '#F2A516' : '#F4F1EA', r: k === 'shared' ? '50%' : '0', t: k === 'late' ? 'rotate(45deg)' : 'none' });
+    const c = (name, km, n, dots) => ({ name, km, n, dots: dots.map(d => dot(d[0], d[1])) });
+    const K = { late: ['#4A2416', '#F08A5D'], disp: ['#4A2416', '#F08A5D'], match: ['#3B2E10', '#F2A516'], sup: ['#24232B', '#C9C4B8'] };
+    const iss = (k, kind, title, body, action, primary) => ({ kind, title, body, action, bg: K[k][0], fg: K[k][1], btnBg: primary ? '#F2A516' : 'transparent', btnFg: primary ? '#15141A' : '#F2A516' });
+    const qs = [['Mekdes Abera', 'Driver · Kebede Transport', '2h'], ['Ethio Textile PLC', 'Company · TIN + trade licence', '3h'], ['3-77310 AM', 'Vehicle · Gojjam Trans · 12 t', '4h'], ['Hailu Negash', 'Driver · independent', '5h'], ['Yared Mamo', 'Driver · licence renewal', '6h'], ['Abay Brokerage', 'Brokerage · 2 dispatchers', '1d']];
+    return {
+      isOverview: tab === 'overview', isVerify: tab === 'verify',
+      tabA: tab === 'overview' ? '#2A2932' : 'transparent', tabB: tab === 'verify' ? '#2A2932' : 'transparent',
+      goOverview: () => this.setState({ tab: 'overview' }), goVerify: () => this.setState({ tab: 'verify' }),
+      corridors: [
+        c('Addis ⇄ Hawassa', '275 km · via Mojo', 21, [[8, 'ok'], [22, 'shared'], [35, 'ok'], [41, 'shared'], [58, 'late'], [66, 'ok'], [80, 'shared'], [90, 'ok']]),
+        c('Addis ⇄ Djibouti', '910 km · via Adama, Dire Dawa', 26, [[5, 'ok'], [14, 'ok'], [26, 'shared'], [33, 'ok'], [47, 'late'], [55, 'ok'], [72, 'ok'], [85, 'shared']]),
+        c('Addis ⇄ Dire Dawa', '445 km · via Awash', 12, [[12, 'ok'], [30, 'shared'], [52, 'ok'], [70, 'late'], [88, 'ok']]),
+        c('Addis ⇄ Bahir Dar', '565 km · via Debre Markos', 11, [[18, 'ok'], [40, 'shared'], [61, 'ok'], [77, 'ok']]),
+        c('Addis ⇄ Adama', '100 km · expressway', 9, [[20, 'shared'], [45, 'ok'], [72, 'late']]),
+        c('Addis ⇄ Jimma', '350 km · via Weliso', 7, [[25, 'ok'], [48, 'shared'], [83, 'ok']]),
+      ],
+      issues: [
+        iss('disp', 'DISPUTE', 'Short delivery: 28 of 30 bags', 'RH-24-08790 · Habesha Cement vs Kebede Transport. Pickup photo shows 30 bags.', 'Open case', true),
+        iss('late', 'LATE', 'No check-in for 3 h on Adama → Addis', 'Kassahun D. · 3-55102 · last at Mojo. SMS ping sent 13:40, no reply.', 'Call driver', false),
+        iss('match', 'MATCH', '9 t cement Mekelle → Addis has no fit', 'Messebo Cement · 4 h open. 2 trucks returning from Mekelle tomorrow.', 'Assist match', false),
+        iss('sup', 'SUPPORT', 'Receiver lost PIN', 'RH-24-08812 · Dawit A. at Piassa · driver waiting at door.', 'Verify & resend', false),
+        iss('sup', 'SUPPORT', 'Shipper can\'t add employee', 'Tana Pharma · owner role needed to invite.', 'Reply', false),
+      ],
+      queue: qs.map((q, i) => ({ name: q[0], org: q[1], age: q[2], bg: i === 0 ? '#24232B' : 'transparent', edge: i === 0 ? '#F2A516' : 'transparent' })),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F1EA;-webkit-font-smoothing:antialiased} a{color:#15141A;text-decoration-color:#F2A516;text-underline-offset:3px} a:hover{color:#8A5A00}</style>
+</helmet>
+<div style="font-family:'Instrument Sans',sans-serif;color:#15141A;min-height:100vh;display:flex;flex-direction:column">
+
+<header style="background:#15141A;color:#F4F1EA;display:flex;align-items:center;gap:24px;padding:0 24px;min-height:60px;flex-wrap:wrap">
+  <div style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 48 48" width="24" height="24"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#F2A516"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#F4F1EA"></path></svg><span style="font-family:Archivo;font-stretch:125%;font-weight:700;font-size:19px">raha</span></div>
+  <nav style="display:flex;gap:4px;flex:1;flex-wrap:wrap">
+    <button onClick="{{ goList }}" style="font:500 14px 'Instrument Sans';color:#F4F1EA;background:{{ navListBg }};border:0;padding:10px 14px;cursor:pointer">Shipments</button>
+    <button onClick="{{ goDetail }}" style="font:500 14px 'Instrument Sans';color:#F4F1EA;background:{{ navDetailBg }};border:0;padding:10px 14px;cursor:pointer">Tracking</button>
+    <button style="font:500 14px 'Instrument Sans';color:#9A968C;background:transparent;border:0;padding:10px 14px">History</button>
+    <button style="font:500 14px 'Instrument Sans';color:#9A968C;background:transparent;border:0;padding:10px 14px">Team</button>
+  </nav>
+  <button onClick="{{ goNew }}" style="font:700 14px 'Instrument Sans';background:#F2A516;color:#15141A;border:0;height:40px;padding:0 16px;cursor:pointer">+ New shipment</button>
+  <div style="display:flex;align-items:center;gap:10px;padding-left:16px;border-left:1px solid #34333C"><span style="width:32px;height:32px;background:#F4F1EA;color:#15141A;display:grid;place-items:center;font-weight:700;font-size:12px">SA</span><div style="line-height:1.2"><div style="font-size:13px;font-weight:600">Sheba Agro PLC</div><div style="font-size:11px;color:#9A968C">Hanna Girma · Logistics staff</div></div></div>
+</header>
+
+<sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+<main style="flex:1;padding:32px 24px 64px;max-width:1280px;width:100%;margin:0 auto;box-sizing:border-box;display:flex;flex-direction:column;gap:28px">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap">
+    <div><div style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">SHEBA AGRO PLC · 6 MEMBERS</div><h1 style="margin:6px 0 0;font-family:Archivo;font-stretch:115%;font-weight:700;font-size:36px;letter-spacing:-0.02em">Shipments</h1></div>
+    <div style="display:flex;border:1px solid #C9C4B8;background:#FBFAF7;font-size:14px"><span style="padding:9px 14px;background:#15141A;color:#F4F1EA">Active · 4</span><span style="padding:9px 14px">Completed</span><span style="padding:9px 14px">All</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1px;background:#E3DED3;border:1px solid #E3DED3">
+    <div style="background:#FBFAF7;padding:18px"><div style="font-size:13px;color:#6B675F">In transit</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:28px;margin-top:4px">2</div></div>
+    <div style="background:#FBFAF7;padding:18px"><div style="font-size:13px;color:#6B675F">Awaiting your choice</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:28px;margin-top:4px">1 <span style="font-size:13px;color:#8A5A00">3 offers</span></div></div>
+    <div style="background:#FBFAF7;padding:18px"><div style="font-size:13px;color:#6B675F">Delivered · Meskerem</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:28px;margin-top:4px">18</div></div>
+    <div style="background:#FBFAF7;padding:18px"><div style="font-size:13px;color:#6B675F">Spend · Meskerem</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:28px;margin-top:4px">ETB 142K</div></div>
+  </div>
+  <div style="background:#15141A;color:#F4F1EA;padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;align-items:center">
+    <div style="display:flex;gap:14px;align-items:center"><svg viewBox="0 0 48 48" width="40" height="40" style="flex:none"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#F2A516"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#F4F1EA"></path></svg><div><div style="font-weight:700;font-size:16px">RH-24-08822 has 3 transport offers</div><div style="font-size:14px;color:#C9C4B8">Addis → Hawassa · 800 kg · Two are trucks already going there with space.</div></div></div>
+    <div style="display:flex;justify-content:end"><button onClick="{{ goNew }}" style="font:700 14px 'Instrument Sans';background:#F2A516;color:#15141A;border:0;height:44px;padding:0 18px;cursor:pointer">Compare offers →</button></div>
+  </div>
+  <div style="background:#FBFAF7;border:1px solid #E3DED3;overflow-x:auto">
+    <div style="min-width:820px">
+      <div style="display:grid;grid-template-columns:130px 1.6fr 1fr 1fr 1.2fr 130px;gap:16px;padding:12px 20px;border-bottom:1px solid #E3DED3;font-family:'JetBrains Mono';font-size:11px;color:#6B675F;letter-spacing:0.04em"><span>ID</span><span>ROUTE</span><span>CARGO</span><span>CARRIER</span><span>PROGRESS</span><span>STATUS</span></div>
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="5">
+        <div onClick="{{ goDetail }}" style="display:grid;grid-template-columns:130px 1.6fr 1fr 1fr 1.2fr 130px;gap:16px;padding:16px 20px;border-bottom:1px solid #EDEAE2;align-items:center;font-size:14px;cursor:pointer" style-hover="background:#F4F1EA">
+          <span style="font-family:'JetBrains Mono';font-size:13px">{{ r.id }}</span>
+          <div><div style="font-weight:700">{{ r.route }}</div><div style="font-size:12px;color:#6B675F">{{ r.when }}</div></div>
+          <span>{{ r.cargo }}</span>
+          <span>{{ r.carrier }}</span>
+          <div style="display:flex;flex-direction:column;gap:5px"><div style="height:6px;background:#EDEAE2"><div style="height:6px;width:{{ r.pct }};background:#15141A"></div></div><span style="font-size:12px;color:#6B675F">{{ r.where }}</span></div>
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 8px;background:{{ r.bg }};color:{{ r.fg }};font-size:12px;font-weight:700;justify-self:start"><span style="width:7px;height:7px;border-radius:50%;background:{{ r.dot }}"></span>{{ r.status }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isNew }}" hint-placeholder-val="{{ false }}">
+<main style="flex:1;padding:32px 24px 64px;max-width:1280px;width:100%;margin:0 auto;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:28px;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div><div style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">NEW SHIPMENT · RH-24-08822</div><h1 style="margin:6px 0 0;font-family:Archivo;font-stretch:115%;font-weight:700;font-size:32px;letter-spacing:-0.02em">What are you sending?</h1></div>
+    <div style="background:#FBFAF7;border:1px solid #E3DED3;display:flex;flex-direction:column">
+      <div style="padding:18px;border-bottom:1px solid #E3DED3;display:flex;gap:14px"><div style="display:flex;flex-direction:column;align-items:center;padding-top:22px"><span style="width:12px;height:12px;background:#15141A"></span><span style="width:2px;height:58px;background:#15141A"></span><span style="width:12px;height:12px;border:2px solid #15141A;box-sizing:border-box"></span></div><div style="flex:1;display:flex;flex-direction:column;gap:14px">
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#6B675F">Pickup<span style="height:44px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;padding:0 12px;font-size:15px;color:#15141A">Sheba Agro warehouse, Bole Bulbula</span></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#6B675F">Deliver to<span style="height:44px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;padding:0 12px;font-size:15px;color:#15141A">Piassa Coffee Traders, Hawassa</span></label>
+      </div></div>
+      <div style="padding:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;border-bottom:1px solid #E3DED3">
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#6B675F">Cargo type<span style="height:44px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:15px;color:#15141A">Coffee, sacked<span>▾</span></span></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#6B675F">Pieces<span style="height:44px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;padding:0 12px;font:500 15px 'JetBrains Mono';color:#15141A">16</span></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#6B675F">Weight<span style="height:44px;border:2px solid #15141A;background:#FFF;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font:500 15px 'JetBrains Mono';color:#15141A">800<span style="color:#6B675F">kg</span></span></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#6B675F">Volume<span style="height:44px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font:500 15px 'JetBrains Mono';color:#15141A">2.4<span style="color:#6B675F">m³</span></span></label>
+      </div>
+      <div style="padding:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px">
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#6B675F">Ready for pickup<span style="height:44px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;padding:0 12px;font-size:15px;color:#15141A">Today, from 10:00</span></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#6B675F">Receiver phone<span style="height:44px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;padding:0 12px;font:500 15px 'JetBrains Mono';color:#15141A">+251 916 552 090</span></label>
+      </div>
+    </div>
+    <div style="font-size:13px;color:#6B675F;line-height:1.5">The receiver gets an SMS with a delivery PIN when the truck departs. No app or account needed.</div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap"><h2 style="margin:0;font-family:Archivo;font-stretch:112%;font-weight:700;font-size:22px">Transport options</h2><span style="font-size:13px;color:#6B675F">Sorted by fit · 3 of 11 trucks on this corridor</span></div>
+    <sc-for list="{{ offers }}" as="o" hint-placeholder-count="3">
+      <div style="background:#FBFAF7;border:{{ o.border }};display:flex;flex-direction:column">
+        <sc-if value="{{ o.match }}" hint-placeholder-val="{{ false }}"><div style="background:#F2A516;padding:7px 16px;font-family:'JetBrains Mono';font-size:11px;font-weight:600;display:flex;gap:8px;align-items:center"><svg viewBox="0 0 48 48" width="14" height="14"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#FBFAF7"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#15141A"></path></svg>{{ o.tag }}</div></sc-if>
+        <div style="padding:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;gap:12px;align-items:center"><span style="width:40px;height:40px;border-radius:50%;background:#15141A;color:#F2A516;display:grid;place-items:center;font-weight:700;font-size:13px;flex:none">{{ o.ini }}</span><div><div style="font-weight:700;font-size:15px">{{ o.driver }} <span style="font-weight:500;color:#2F7A55;font-size:12px">✓ verified</span></div><div style="font-size:13px;color:#6B675F">{{ o.fleet }} · <span style="font-family:'JetBrains Mono'">{{ o.plate }}</span></div></div></div>
+            <div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;height:14px;gap:2px"><div style="flex:{{ o.used }};background:#15141A"></div><div style="flex:{{ o.mine }};background:#F2A516"></div><div style="flex:{{ o.free }};background:repeating-linear-gradient(135deg,#E3DED3 0 3px,transparent 3px 6px);border:1px dashed #C9C4B8"></div></div><span style="font-size:12px;color:#46433D">{{ o.cap }}</span></div>
+            <span style="font-size:13px;color:#46433D">{{ o.when }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:end;justify-content:space-between;gap:10px"><div style="text-align:right"><div style="font-family:'JetBrains Mono';font-weight:600;font-size:19px">{{ o.price }}</div><div style="font-size:12px;color:#6B675F">{{ o.note }}</div></div><button onClick="{{ goDetail }}" style="font:700 14px 'Instrument Sans';background:{{ o.btnBg }};color:{{ o.btnFg }};border:0;height:42px;padding:0 16px;cursor:pointer">Book</button></div>
+        </div>
+      </div>
+    </sc-for>
+    <div style="font-size:13px;color:#6B675F;line-height:1.5">Prices are set by carriers or their broker. Payment is recorded in Raha; you pay the carrier directly (Telebirr, CBE, cash).</div>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+<main style="flex:1;padding:32px 24px 64px;max-width:1280px;width:100%;margin:0 auto;box-sizing:border-box;display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap">
+    <div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span style="font-family:'JetBrains Mono';font-size:13px;color:#6B675F">RH-24-08817</span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 8px;background:#E3E6F7;color:#26338A;font-size:12px;font-weight:700"><span style="width:7px;height:7px;background:#3346B8;border-radius:50%"></span>In transit</span></div><h1 style="margin:6px 0 0;font-family:Archivo;font-stretch:115%;font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:-0.02em">Addis Ababa → Hawassa</h1></div>
+    <div style="text-align:right"><div style="font-size:13px;color:#6B675F">Estimated arrival</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:22px">Today 17:45</div></div>
+  </div>
+  <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:24px;overflow-x:auto">
+    <div style="display:flex;min-width:620px">
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center"><span style="width:14px;height:14px;background:#15141A;flex:none"></span><span style="flex:1;height:3px;background:#15141A"></span></div><span style="font-weight:700;font-size:14px">Addis Ababa</span><span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">Picked up 11:06</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center"><span style="width:14px;height:14px;background:#15141A;border-radius:50%;flex:none"></span><span style="flex:1;height:3px;background:#15141A"></span></div><span style="font-weight:700;font-size:14px">Mojo</span><span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">15:01</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center"><span style="width:18px;height:18px;background:#F2A516;border:3px solid #15141A;border-radius:50%;flex:none;box-sizing:border-box"></span><span style="flex:1;height:3px;background:repeating-linear-gradient(90deg,#C9C4B8 0 6px,transparent 6px 10px)"></span></div><span style="font-weight:700;font-size:14px">Meki</span><span style="font-family:'JetBrains Mono';font-size:12px;color:#8A5A00;font-weight:600">Last check-in 15:19</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center"><span style="width:14px;height:14px;border:2px solid #C9C4B8;border-radius:50%;flex:none;box-sizing:border-box"></span><span style="flex:1;height:3px;background:repeating-linear-gradient(90deg,#C9C4B8 0 6px,transparent 6px 10px)"></span></div><span style="font-weight:600;font-size:14px;color:#6B675F">Shashemene</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px"><span style="width:14px;height:14px;border:2px solid #C9C4B8;box-sizing:border-box"></span><span style="font-weight:600;font-size:14px;color:#6B675F">Hawassa</span><span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">ETA 17:45</span></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:20px;display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">CARRIER</span>
+        <div style="display:flex;gap:12px;align-items:center"><span style="width:48px;height:48px;border-radius:50%;background:#15141A;color:#F2A516;display:grid;place-items:center;font-weight:700">AK</span><div><div style="font-weight:700;font-size:16px">Abebe Kebede</div><div style="font-size:13px;color:#6B675F">Kebede Transport · 212 trips on Raha</div></div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E3DED3;border:1px solid #E3DED3;font-size:13px">
+          <div style="background:#FBFAF7;padding:10px"><div style="color:#6B675F">Plate</div><div style="font-family:'JetBrains Mono';font-weight:600">3-48213 AA</div></div>
+          <div style="background:#FBFAF7;padding:10px"><div style="color:#6B675F">Truck</div><div style="font-weight:600">Isuzu FSR · 10 t</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;height:12px;gap:2px"><div style="flex:80;background:#15141A"></div><div style="flex:8;background:#F2A516"></div><div style="flex:12;background:repeating-linear-gradient(135deg,#E3DED3 0 3px,transparent 3px 6px)"></div></div><span style="font-size:12px;color:#46433D">Your 800 kg is sharing a truck with another shipper's 8 t</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button style="font:600 14px 'Instrument Sans';background:transparent;border:1.5px solid #15141A;height:42px;cursor:pointer">Call driver</button><button style="font:600 14px 'Instrument Sans';background:transparent;border:1.5px solid #15141A;height:42px;cursor:pointer">Share link</button></div>
+      </div>
+      <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:20px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">PROOF</span>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px"><div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#D6CFC1 0 8px,#DDD7CA 8px 16px);display:flex;align-items:end;padding:6px;box-sizing:border-box"><span style="font-family:'JetBrains Mono';font-size:10px;background:#15141A;color:#F4F1EA;padding:2px 4px">pickup 11:04</span></div><div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#D6CFC1 0 8px,#DDD7CA 8px 16px);display:flex;align-items:end;padding:6px;box-sizing:border-box"><span style="font-family:'JetBrains Mono';font-size:10px;background:#15141A;color:#F4F1EA;padding:2px 4px">waybill</span></div><div style="aspect-ratio:1;border:1px dashed #C9C4B8;display:grid;place-items:center;font-size:12px;color:#6B675F;text-align:center;padding:6px">Delivery photo on arrival</div></div>
+      </div>
+    </div>
+    <div style="background:#FBFAF7;border:1px solid #E3DED3;display:flex;flex-direction:column;min-height:420px">
+      <div style="padding:16px 20px;border-bottom:1px solid #E3DED3;display:flex;justify-content:space-between;align-items:center"><span style="font-weight:700">Messages</span><span style="font-size:12px;color:#6B675F">Hanna, Abebe, Raha Ops</span></div>
+      <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.45">
+        <div style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F;text-align:center">— 11:06 · Pickup confirmed with 2 photos —</div>
+        <div style="align-self:start;max-width:80%;background:#EDEAE2;padding:10px 12px"><div style="font-size:11px;font-weight:700;margin-bottom:2px">Abebe</div>All 16 sacks loaded. Leaving Addis after the cement drop is loaded, about 14:00.</div>
+        <div style="align-self:end;max-width:80%;background:#15141A;color:#F4F1EA;padding:10px 12px">Thank you. Dawit at Piassa will receive. He has the PIN.</div>
+        <div style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F;text-align:center">— 15:19 · Check-in at Meki (sent via SMS) —</div>
+        <div style="align-self:start;max-width:80%;background:#EDEAE2;padding:10px 12px"><div style="font-size:11px;font-weight:700;margin-bottom:2px">Abebe · via SMS</div>Weak signal after Meki. Next update Shashemene.</div>
+      </div>
+      <div style="padding:12px;border-top:1px solid #E3DED3;display:flex;gap:8px"><span style="flex:1;height:42px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;padding:0 12px;color:#6B675F;font-size:14px">Write a message…</span><button style="font:700 14px 'Instrument Sans';background:#15141A;color:#F4F1EA;border:0;padding:0 16px">Send</button></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:20px;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">DELIVERY</span>
+        <div style="font-size:14px;line-height:1.5">Dawit Alemu (<span style="font-family:'JetBrains Mono'">+251 916 552 090</span>) holds PIN <span style="font-family:'JetBrains Mono';font-weight:600;letter-spacing:0.1em">••••</span>. The driver enters it on hand-over.</div>
+        <div style="display:flex;flex-direction:column;font-size:14px;border-top:1px solid #E3DED3">
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #EDEAE2"><span style="color:#6B675F">Cargo</span><span>Coffee · 16 sacks · 800 kg</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #EDEAE2"><span style="color:#6B675F">Agreed price</span><span style="font-family:'JetBrains Mono'">ETB 6,400</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:#6B675F">Payment</span><span style="color:#8A5A00;font-weight:600">To record on delivery</span></div>
+        </div>
+        <button style="font:700 15px 'Instrument Sans';background:#E3DED3;color:#6B675F;border:0;height:48px">Confirm delivery · after PIN</button>
+        <span style="font-size:12px;color:#6B675F">You can also confirm manually if the receiver confirmed by phone.</span>
+      </div>
+      <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:20px;display:flex;flex-direction:column;gap:10px;font-size:13px">
+        <span style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">NOTIFY ME BY</span>
+        <div style="display:flex;gap:6px;flex-wrap:wrap"><span style="padding:7px 10px;background:#15141A;color:#F4F1EA">Email</span><span style="padding:7px 10px;background:#15141A;color:#F4F1EA">Telegram</span><span style="padding:7px 10px;border:1px solid #C9C4B8">SMS</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+</sc-if>
+
+<footer style="padding:20px 24px;border-top:1px solid #E3DED3;display:flex;gap:20px;font-size:13px;color:#6B675F;flex-wrap:wrap"><a href="Raha Identity.dc.html">Identity</a><a href="Raha Driver Mobile.dc.html">Driver app</a><a href="Raha Broker Desk.dc.html">Broker desk →</a></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;list&quot;,&quot;new&quot;,&quot;detail&quot;],&quot;default&quot;:&quot;list&quot;,&quot;tsType&quot;:&quot;'list'|'new'|'detail'&quot;}}">
+class Component extends DCLogic {
+  state = { screen: this.props.startScreen ?? 'list' };
+  renderVals() {
+    const s = this.state.screen;
+    const st = {
+      transit: ['#E3E6F7', '#26338A', '#3346B8', 'In transit'],
+      matched: ['#FCEBC4', '#5E3E00', '#F2A516', 'Matched'],
+      req: ['#EDEAE2', '#46433D', '#9A968C', 'Choose offer'],
+      done: ['#E2EFE7', '#1F5A3D', '#2F7A55', 'Delivered'],
+    };
+    const row = (id, route, when, cargo, carrier, pct, where, k) => ({ id, route, when, cargo, carrier, pct, where, bg: st[k][0], fg: st[k][1], dot: st[k][2], status: st[k][3] });
+    const offer = (o) => ({ border: o.match ? '2px solid #15141A' : '1px solid #E3DED3', btnBg: o.match ? '#F2A516' : '#15141A', btnFg: o.match ? '#15141A' : '#F4F1EA', ...o });
+    return {
+      isList: s === 'list', isNew: s === 'new', isDetail: s === 'detail',
+      navListBg: s === 'list' || s === 'new' ? '#2A2932' : 'transparent',
+      navDetailBg: s === 'detail' ? '#2A2932' : 'transparent',
+      goList: () => this.setState({ screen: 'list' }),
+      goNew: () => this.setState({ screen: 'new' }),
+      goDetail: () => this.setState({ screen: 'detail' }),
+      rows: [
+        row('RH-24-08817', 'Addis Ababa → Hawassa', 'Picked up today 11:06', 'Coffee · 800 kg', 'Kebede Transport', '55%', 'Meki · 15:19', 'transit'),
+        row('RH-24-08822', 'Addis Ababa → Hawassa', 'Ready today 10:00', 'Coffee · 800 kg', '3 offers', '0%', 'Not yet booked', 'req'),
+        row('RH-24-08804', 'Addis Ababa → Dire Dawa', 'Picked up yesterday', 'Coffee · 4,000 kg', 'Awash Freight', '78%', 'Mieso · 09:40', 'transit'),
+        row('RH-24-08826', 'Adama → Addis Ababa', 'Pickup tomorrow 08:00', 'Maize · 2,500 kg', 'Selam Logistics', '0%', 'Driver assigned', 'matched'),
+        row('RH-24-08761', 'Addis Ababa → Bahir Dar', 'Delivered Mon', 'Coffee · 6,000 kg', 'Gojjam Trans', '100%', 'PIN confirmed', 'done'),
+      ],
+      offers: [
+        offer({ match: true, tag: 'ALREADY GOING TO HAWASSA · HAS 2 T SPARE', ini: 'AK', driver: 'Abebe Kebede', fleet: 'Kebede Transport', plate: '3-48213 AA', used: 80, mine: 8, free: 12, cap: '10 t truck · 8 t aboard · your 800 kg fits', when: 'Pickup 11:00 · departs 14:00 · arrives ~17:45', price: 'ETB 6,400', note: '38% below a dedicated truck' }),
+        offer({ match: true, tag: 'RETURN TRIP TO HAWASSA · RUNNING EMPTY', ini: 'MT', driver: 'Meseret Tadesse', fleet: 'via Yonas Brokerage', plate: '3-61190 OR', used: 0, mine: 16, free: 84, cap: '5 t truck · empty return leg', when: 'Pickup 13:00 · arrives ~18:30', price: 'ETB 7,100', note: 'Broker-managed' }),
+        offer({ match: false, ini: 'SL', driver: 'Biniyam Assefa', fleet: 'Selam Logistics', plate: '3-30457 AA', used: 0, mine: 27, free: 73, cap: '3 t pickup truck · dedicated', when: 'Pickup 10:30 · arrives ~15:30', price: 'ETB 10,400', note: 'Dedicated, fastest' }),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

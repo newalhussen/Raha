@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#DCD7CC;-webkit-font-smoothing:antialiased} a{color:#15141A} a:hover{color:#8A5A00}</style>
+</helmet>
+<div style="font-family:'Instrument Sans',sans-serif;color:#15141A;padding:56px;display:flex;flex-direction:column;gap:64px;min-width:max-content">
+
+<header style="display:flex;align-items:end;justify-content:space-between;gap:40px;max-width:1900px">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 48 48" width="28" height="28"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#F2A516"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#15141A"></path></svg><span style="font-family:Archivo;font-stretch:125%;font-weight:700;font-size:22px">raha</span><span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F;margin-left:6px">DRIVER · Flutter / Android</span></div>
+    <h1 style="margin:0;font-family:Archivo;font-stretch:118%;font-weight:700;font-size:56px;letter-spacing:-0.025em;line-height:1">Raha Driver</h1>
+    <p style="margin:0;max-width:720px;font-size:17px;line-height:1.5;color:#46433D">Built for a 5-inch, 2 GB Android phone on patchy 3G. One primary action per screen in a 64 px amber bar at thumb height. Bilingual labels. Every action works offline and syncs when signal returns; SMS and Telegram cover the gaps.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,auto);gap:8px 28px;font-size:13px;color:#46433D">
+    <span><strong style="font-family:'JetBrains Mono'">64px</strong> primary action</span>
+    <span><strong style="font-family:'JetBrains Mono'">56px</strong> min touch target</span>
+    <span><strong style="font-family:'JetBrains Mono'">17px</strong> body text</span>
+    <span><strong style="font-family:'JetBrains Mono'">&lt;150 KB</strong> per screen load</span>
+  </div>
+</header>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'JetBrains Mono';font-size:13px;color:#8A5A00;font-weight:600">01</span><h2 style="margin:0;font-family:Archivo;font-stretch:112%;font-weight:700;font-size:28px">Sign in &amp; home</h2><span style="color:#6B675F;font-size:14px">Phone number + SMS code. No passwords, no email.</span></div>
+  <div style="display:flex;gap:40px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">1.1 Login</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#15141A;color:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;padding:28px 24px 24px;gap:28px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><svg viewBox="0 0 48 48" width="40" height="40"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#F2A516"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#F4F1EA"></path></svg><div style="display:flex;border:1px solid #34333C;font-size:13px"><span style="padding:8px 12px;background:#F4F1EA;color:#15141A;font-weight:600">EN</span><span style="padding:8px 12px;font-family:'Noto Sans Ethiopic'">አማ</span></div></div>
+        <div style="margin-top:40px;display:flex;flex-direction:column;gap:10px"><div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:34px;line-height:1.05;letter-spacing:-0.02em">Find loads for your empty space.</div><div style="font-family:'Noto Sans Ethiopic';font-size:16px;color:#C9C4B8">ለባዶ ቦታዎ ጭነት ያግኙ</div></div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+          <label style="font-size:14px;color:#C9C4B8">Phone number · ስልክ ቁጥር</label>
+          <div style="display:flex;height:60px;background:#24232B;border:2px solid #F2A516"><span style="display:grid;place-items:center;padding:0 14px;font-family:'JetBrains Mono';font-size:18px;border-right:1px solid #34333C">+251</span><span style="display:flex;align-items:center;padding:0 14px;font-family:'JetBrains Mono';font-size:20px;letter-spacing:0.04em">91 120 4418<span style="width:2px;height:24px;background:#F2A516;margin-left:3px"></span></span></div>
+          <span style="font-size:13px;color:#9A968C">We'll text you a 6-digit code.</span>
+        </div>
+        <button style="height:64px;background:#F2A516;color:#15141A;border:0;font:700 18px 'Instrument Sans';display:flex;justify-content:space-between;align-items:center;padding:0 22px">Send code<span style="font-size:22px">→</span></button>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">1.2 Verify code</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="height:56px;display:flex;align-items:center;padding:0 12px;flex:none"><span style="width:48px;height:48px;display:grid;place-items:center;font-size:22px">←</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;padding:8px 24px 0;gap:10px">
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:28px;letter-spacing:-0.02em">Enter the code</div>
+        <div style="font-size:15px;color:#6B675F">Sent to <span style="font-family:'JetBrains Mono';color:#15141A">+251 91 120 4418</span></div>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:20px">
+          <span style="height:58px;background:#FBFAF7;border:2px solid #15141A;display:grid;place-items:center;font:600 26px 'JetBrains Mono'">3</span><span style="height:58px;background:#FBFAF7;border:2px solid #15141A;display:grid;place-items:center;font:600 26px 'JetBrains Mono'">0</span><span style="height:58px;background:#FBFAF7;border:2px solid #15141A;display:grid;place-items:center;font:600 26px 'JetBrains Mono'">8</span><span style="height:58px;background:#FBFAF7;border:2px solid #F2A516;display:grid;place-items:center;font:600 26px 'JetBrains Mono'"></span><span style="height:58px;background:#FBFAF7;border:1px solid #C9C4B8;display:grid;place-items:center"></span><span style="height:58px;background:#FBFAF7;border:1px solid #C9C4B8;display:grid;place-items:center"></span>
+        </div>
+        <div style="font-size:14px;color:#6B675F;margin-top:8px">Code auto-fills from SMS. Resend in <span style="font-family:'JetBrains Mono';color:#15141A">0:41</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);background:#E3DED3;gap:1px;flex:none">
+        <span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">1</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">2</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">3</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">4</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">5</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">6</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">7</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">8</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">9</span><span style="height:56px;background:#EDEAE2"></span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font:500 22px 'JetBrains Mono'">0</span><span style="height:56px;background:#EDEAE2;display:grid;place-items:center;font-size:20px">⌫</span>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">1.3 Home · available, partly loaded</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="background:#15141A;color:#F4F1EA;flex:none">
+        <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px 0">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:44px;height:44px;border-radius:50%;background:#F2A516;color:#15141A;display:grid;place-items:center;font-weight:700">AK</span><div><div style="font-size:13px;color:#9A968C">Selam, Abebe</div><div style="font-family:'JetBrains Mono';font-size:13px">3-48213 AA</div></div></div>
+          <span style="width:48px;height:48px;display:grid;place-items:center;position:relative"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#F4F1EA" stroke-width="1.75"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"></path></svg><span style="position:absolute;top:10px;right:10px;width:9px;height:9px;background:#F2A516;border-radius:50%"></span></span>
+        </div>
+        <div style="margin:16px;background:#24232B;display:flex;align-items:center;justify-content:space-between;padding:14px 16px">
+          <div><div style="font-weight:700;font-size:17px">Available for loads</div><div style="font-size:13px;color:#9A968C">ጭነት ለመቀበል ዝግጁ</div></div>
+          <span style="width:64px;height:36px;background:#F2A516;display:flex;align-items:center;justify-content:end;padding:3px;box-sizing:border-box"><span style="width:30px;height:30px;background:#15141A"></span></span>
+        </div>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:14px">
+        <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:16px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;font-size:13px;color:#6B675F"><span>Today's route</span><span style="font-family:'JetBrains Mono'">Departs 14:00</span></div>
+          <div style="font-family:Archivo;font-stretch:112%;font-weight:700;font-size:22px">Addis → Hawassa</div>
+          <div style="display:flex;height:22px;gap:2px"><div style="flex:8;background:#15141A"></div><div style="flex:2;background:repeating-linear-gradient(135deg,#E3DED3 0 4px,transparent 4px 8px);border:1px dashed #C9C4B8"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:14px"><span>8.0 t loaded</span><span style="font-weight:700">2.0 t empty</span></div>
+        </div>
+        <div style="background:#F2A516;padding:16px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono';font-size:12px;font-weight:600"><svg viewBox="0 0 48 48" width="16" height="16"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#FBFAF7"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#15141A"></path></svg>3 LOADS FIT YOUR SPACE</div>
+          <div style="font-size:17px;font-weight:600;line-height:1.35">Fill your empty 2 t on the way to Hawassa. Best: 800 kg · ETB 6,400</div>
+          <span style="height:52px;background:#15141A;color:#F4F1EA;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-weight:700;font-size:16px">See loads<span>→</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:14px"><div style="font-size:12px;color:#6B675F">This week</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:20px;margin-top:4px">ETB 18,200</div></div>
+          <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:14px"><div style="font-size:12px;color:#6B675F">Trips done</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:20px;margin-top:4px">4</div></div>
+        </div>
+      </div>
+      <div style="height:68px;background:#FBFAF7;border-top:1px solid #E3DED3;display:grid;grid-template-columns:repeat(4,1fr);flex:none">
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;font-weight:700;position:relative"><span style="position:absolute;top:0;left:25%;right:25%;height:3px;background:#F2A516"></span><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#15141A" stroke-width="2"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"></path></svg>Home</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><path d="M4 8l8-4 8 4v8l-8 4-8-4zM4 8l8 4 8-4M12 12v8"></path></svg>Loads</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><circle cx="5" cy="18" r="2"></circle><circle cx="19" cy="6" r="2"></circle><path d="M7 18h7a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h7"></path></svg>Trips</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><rect x="3" y="6" width="18" height="12"></rect><circle cx="12" cy="12" r="2.5"></circle></svg>Earnings</span>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">1.4 Notifications</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="height:60px;display:flex;align-items:center;gap:8px;padding:0 12px;border-bottom:1px solid #E3DED3;flex:none"><span style="width:48px;height:48px;display:grid;place-items:center;font-size:22px">←</span><span style="font-family:Archivo;font-stretch:112%;font-weight:700;font-size:20px">Notifications</span></div>
+      <div style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+        <div style="padding:16px;display:flex;gap:12px;background:#FCEBC4;border-bottom:1px solid #E3DED3"><span style="width:10px;height:10px;background:#F2A516;border-radius:50%;margin-top:6px;flex:none"></span><div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:16px">New load fits your truck</div><div style="font-size:14px;color:#46433D;line-height:1.4">800 kg coffee · Addis → Hawassa · ETB 6,400</div><div style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">2 min ago · also sent by Telegram</div></div></div>
+        <div style="padding:16px;display:flex;gap:12px;border-bottom:1px solid #E3DED3"><span style="width:10px;height:10px;background:#3346B8;border-radius:50%;margin-top:6px;flex:none"></span><div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:16px">Pickup time changed</div><div style="font-size:14px;color:#46433D;line-height:1.4">Habesha Cement moved RH-24-08790 pickup to 15:30.</div><div style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">1 h ago</div></div></div>
+        <div style="padding:16px;display:flex;gap:12px;border-bottom:1px solid #E3DED3"><span style="width:10px;height:10px;background:#2F7A55;margin-top:6px;flex:none"></span><div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:16px">Payment recorded</div><div style="font-size:14px;color:#46433D;line-height:1.4">ETB 9,800 for RH-24-08711 marked paid by Kebede Transport.</div><div style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">Yesterday</div></div></div>
+        <div style="padding:16px;display:flex;gap:12px;border-bottom:1px solid #E3DED3"><span style="width:10px;height:10px;border:2px solid #6B675F;border-radius:50%;margin-top:6px;flex:none;box-sizing:border-box"></span><div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:700;font-size:16px">Licence verified</div><div style="font-size:14px;color:#46433D;line-height:1.4">Raha Operations approved your driving licence.</div><div style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">Mon</div></div></div>
+        <div style="padding:16px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:13px;color:#6B675F">Also notify me by</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><span style="padding:10px 14px;background:#15141A;color:#F4F1EA;font-size:14px;font-weight:600">✓ Telegram</span><span style="padding:10px 14px;background:#15141A;color:#F4F1EA;font-size:14px;font-weight:600">✓ SMS</span><span style="padding:10px 14px;border:1px solid #C9C4B8;font-size:14px">Call</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'JetBrains Mono';font-size:13px;color:#8A5A00;font-weight:600">02</span><h2 style="margin:0;font-family:Archivo;font-stretch:112%;font-weight:700;font-size:28px">Find &amp; accept work</h2><span style="color:#6B675F;font-size:14px">Every load shows whether it fits your open space.</span></div>
+  <div style="display:flex;gap:40px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">2.1 Available loads</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="padding:8px 16px 12px;display:flex;flex-direction:column;gap:12px;flex:none;border-bottom:1px solid #E3DED3">
+        <span style="font-family:Archivo;font-stretch:112%;font-weight:700;font-size:24px">Loads</span>
+        <div style="display:flex;gap:8px"><span style="padding:10px 14px;background:#15141A;color:#F4F1EA;font-size:14px;font-weight:600">On my route</span><span style="padding:10px 14px;border:1px solid #C9C4B8;font-size:14px">Near me</span><span style="padding:10px 14px;border:1px solid #C9C4B8;font-size:14px">All</span></div>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:12px;display:flex;flex-direction:column;gap:10px">
+        <div style="background:#FBFAF7;border:2px solid #15141A;display:flex;flex-direction:column">
+          <div style="background:#F2A516;padding:6px 12px;font-family:'JetBrains Mono';font-size:11px;font-weight:600">BEST FIT · uses 40% of your empty 2 t</div>
+          <div style="padding:14px;display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:Archivo;font-stretch:110%;font-weight:700;font-size:19px">Addis → Hawassa</span><span style="font-family:'JetBrains Mono';font-weight:600;font-size:16px">ETB 6,400</span></div>
+            <div style="font-size:14px;color:#46433D">800 kg · Coffee, 16 sacks · Today 11:00</div>
+            <div style="font-size:13px;color:#6B675F">Pickup: Bole Bulbula · 4.2 km from you</div>
+          </div>
+        </div>
+        <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:14px;display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:Archivo;font-stretch:110%;font-weight:700;font-size:19px">Addis → Shashemene</span><span style="font-family:'JetBrains Mono';font-weight:600;font-size:16px">ETB 4,900</span></div>
+          <div style="font-size:14px;color:#46433D">1,500 kg · Cement, 30 bags · Today 12:30</div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:#6B675F">Drop on your way</span><span style="font-weight:600">Fits ✓</span></div>
+        </div>
+        <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:14px;display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:Archivo;font-stretch:110%;font-weight:700;font-size:19px">Mojo → Hawassa</span><span style="font-family:'JetBrains Mono';font-weight:600;font-size:16px">ETB 3,200</span></div>
+          <div style="font-size:14px;color:#46433D">600 kg · Packaged foods · Today 15:00</div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:#6B675F">Pickup on your way</span><span style="font-weight:600">Fits ✓</span></div>
+        </div>
+        <div style="background:#EDEAE2;border:1px dashed #C9C4B8;padding:14px;display:flex;flex-direction:column;gap:6px;color:#6B675F">
+          <div style="display:flex;justify-content:space-between"><span style="font-weight:700;font-size:16px">Addis → Adama</span><span style="font-family:'JetBrains Mono'">ETB 7,800</span></div>
+          <div style="font-size:13px">3,200 kg · Too heavy for your open space</div>
+        </div>
+      </div>
+      <div style="height:68px;background:#FBFAF7;border-top:1px solid #E3DED3;display:grid;grid-template-columns:repeat(4,1fr);flex:none">
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"></path></svg>Home</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;font-weight:700;position:relative"><span style="position:absolute;top:0;left:25%;right:25%;height:3px;background:#F2A516"></span><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#15141A" stroke-width="2"><path d="M4 8l8-4 8 4v8l-8 4-8-4zM4 8l8 4 8-4M12 12v8"></path></svg>Loads</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><circle cx="5" cy="18" r="2"></circle><circle cx="19" cy="6" r="2"></circle><path d="M7 18h7a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h7"></path></svg>Trips</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><rect x="3" y="6" width="18" height="12"></rect><circle cx="12" cy="12" r="2.5"></circle></svg>Earnings</span>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">2.2 Load details · accept / decline</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;flex:none"><span style="width:48px;height:48px;display:grid;place-items:center;font-size:22px">←</span><span style="font-family:'JetBrains Mono';font-size:13px;color:#6B675F;padding-right:8px">RH-24-08817</span></div>
+      <div style="flex:1;overflow:hidden;padding:0 16px;display:flex;flex-direction:column;gap:14px">
+        <div><div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:28px;line-height:1.05;letter-spacing:-0.02em">Addis Ababa → Hawassa</div><div style="font-size:14px;color:#6B675F;margin-top:6px">275 km · same direction as your trip</div></div>
+        <div style="background:#15141A;color:#F4F1EA;padding:16px;display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:12px;color:#9A968C">You earn</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:28px;color:#F2A516">ETB 6,400</div></div><div style="text-align:right;font-size:12px;color:#9A968C">Paid by shipper<br>on delivery</div></div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #E3DED3">
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #E3DED3;font-size:15px"><span style="color:#6B675F">Cargo</span><span style="font-weight:600">Coffee · 16 sacks</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #E3DED3;font-size:15px"><span style="color:#6B675F">Weight</span><span style="font-family:'JetBrains Mono';font-weight:600">800 kg</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #E3DED3;font-size:15px"><span style="color:#6B675F">Pickup</span><span style="font-weight:600;text-align:right">Bole Bulbula, Today 11:00</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #E3DED3;font-size:15px"><span style="color:#6B675F">Deliver to</span><span style="font-weight:600;text-align:right">Piassa, Hawassa</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:15px"><span style="color:#6B675F">Shipper</span><span style="font-weight:600">Sheba Agro PLC ✓</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;height:18px;gap:2px"><div style="flex:80;background:#15141A"></div><div style="flex:8;background:#F2A516"></div><div style="flex:12;background:repeating-linear-gradient(135deg,#E3DED3 0 4px,transparent 4px 8px);border:1px dashed #C9C4B8"></div></div><span style="font-size:13px;color:#46433D">After this load: 8.8 t of 10 t · 1.2 t still free</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:8px;padding:12px 16px 16px;flex:none">
+        <span style="height:64px;border:2px solid #15141A;display:grid;place-items:center;font-weight:700;font-size:16px">Decline</span>
+        <span style="height:64px;background:#F2A516;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-weight:700;font-size:18px">Accept load<span>→</span></span>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">2.3 Accepted · waiting for confirmation</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#15141A;color:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:42</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:24px;text-align:center">
+        <svg viewBox="0 0 48 48" width="120" height="120"><path d="M8 22A16 16 0 0 1 40 22Z" fill="#F2A516"></path><path d="M8 26A16 16 0 0 0 40 26Z" fill="#F4F1EA"></path></svg>
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:30px;line-height:1.05">Load matched</div>
+        <div style="font-size:16px;color:#C9C4B8;line-height:1.5;max-width:260px">Sheba Agro confirmed. Head to Bole Bulbula by 11:00. Contact: Hanna, +251 911 330 207.</div>
+        <div style="font-family:'Noto Sans Ethiopic';font-size:15px;color:#9A968C">ጭነቱ ተመድቦልዎታል</div>
+      </div>
+      <div style="padding:16px;display:flex;flex-direction:column;gap:8px;flex:none">
+        <span style="height:64px;background:#F2A516;color:#15141A;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-weight:700;font-size:18px">Go to pickup<span>→</span></span>
+        <span style="height:52px;display:grid;place-items:center;font-size:15px;color:#C9C4B8">Call shipper</span>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">2.4 Trips list</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="padding:8px 16px 12px;flex:none;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #E3DED3"><span style="font-family:Archivo;font-stretch:112%;font-weight:700;font-size:24px">Trips</span><div style="display:grid;grid-template-columns:1fr 1fr;border:1.5px solid #15141A"><span style="padding:11px;text-align:center;background:#15141A;color:#F4F1EA;font-weight:600">Active · 2</span><span style="padding:11px;text-align:center">Completed</span></div></div>
+      <div style="flex:1;overflow:hidden;padding:12px;display:flex;flex-direction:column;gap:10px">
+        <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:14px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span style="display:flex;align-items:center;gap:6px;padding:4px 8px;background:#E3E6F7;color:#26338A;font-size:12px;font-weight:700"><span style="width:7px;height:7px;background:#3346B8;border-radius:50%"></span>In transit</span><span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">RH-24-08790</span></div>
+          <div style="font-family:Archivo;font-stretch:110%;font-weight:700;font-size:19px">Addis → Hawassa</div>
+          <div style="font-size:14px;color:#46433D">Habesha Cement · 8,000 kg · main load</div>
+        </div>
+        <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:14px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span style="display:flex;align-items:center;gap:6px;padding:4px 8px;background:#FCEBC4;color:#5E3E00;font-size:12px;font-weight:700"><span style="width:7px;height:7px;background:#F2A516;border-radius:50%"></span>Pickup 11:00</span><span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">RH-24-08817</span></div>
+          <div style="font-family:Archivo;font-stretch:110%;font-weight:700;font-size:19px">Addis → Hawassa</div>
+          <div style="font-size:14px;color:#46433D">Sheba Agro · 800 kg · return-load match</div>
+        </div>
+        <div style="font-size:13px;color:#6B675F;padding:6px 4px;line-height:1.5">Two loads, one truck. Deliveries are ordered by drop-off along the corridor.</div>
+      </div>
+      <div style="height:68px;background:#FBFAF7;border-top:1px solid #E3DED3;display:grid;grid-template-columns:repeat(4,1fr);flex:none">
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"></path></svg>Home</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><path d="M4 8l8-4 8 4v8l-8 4-8-4zM4 8l8 4 8-4M12 12v8"></path></svg>Loads</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;font-weight:700;position:relative"><span style="position:absolute;top:0;left:25%;right:25%;height:3px;background:#F2A516"></span><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#15141A" stroke-width="2"><circle cx="5" cy="18" r="2"></circle><circle cx="19" cy="6" r="2"></circle><path d="M7 18h7a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h7"></path></svg>Trips</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><rect x="3" y="6" width="18" height="12"></rect><circle cx="12" cy="12" r="2.5"></circle></svg>Earnings</span>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'JetBrains Mono';font-size:13px;color:#8A5A00;font-weight:600">03</span><h2 style="margin:0;font-family:Archivo;font-stretch:112%;font-weight:700;font-size:28px">Run the trip</h2><span style="color:#6B675F;font-size:14px">A fixed sequence: arrive → load → photo → start → check in. One big button per step.</span></div>
+  <div style="display:flex;gap:40px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">3.1 Heading to pickup</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>10:34</span><span>3G ▮▮▯ 58%</span></div>
+      <div style="padding:4px 16px 16px;flex:none;display:flex;flex-direction:column;gap:12px">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px"><span style="height:5px;background:#F2A516"></span><span style="height:5px;background:#E3DED3"></span><span style="height:5px;background:#E3DED3"></span><span style="height:5px;background:#E3DED3"></span><span style="height:5px;background:#E3DED3"></span></div>
+        <span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">STEP 1 OF 5 · GO TO PICKUP</span>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:0 16px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:28px;line-height:1.05;letter-spacing:-0.02em">Sheba Agro warehouse</div>
+        <div style="font-size:16px;line-height:1.5;color:#46433D">Bole Bulbula, behind Total station, blue gate. Ask for Hanna at loading bay 2.</div>
+        <div style="height:170px;background:#E9E4D9;position:relative;overflow:hidden;border:1px solid #E3DED3">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(#DCD6C9 1px,transparent 1px),linear-gradient(90deg,#DCD6C9 1px,transparent 1px);background-size:28px 28px"></div>
+          <span style="position:absolute;left:20%;top:62%;width:14px;height:14px;background:#3346B8;border:3px solid #FBFAF7;border-radius:50%"></span>
+          <span style="position:absolute;left:70%;top:26%;width:18px;height:18px;background:#15141A;border:3px solid #F2A516"></span>
+          <span style="position:absolute;left:8px;bottom:8px;font-family:'JetBrains Mono';font-size:11px;background:#FBFAF7;padding:3px 6px">Static map · 4.2 km · ~18 min</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <span style="height:56px;border:1.5px solid #15141A;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#15141A" stroke-width="1.75"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>Navigate</span>
+          <span style="height:56px;border:1.5px solid #15141A;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#15141A" stroke-width="1.75"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"></path></svg>Call Hanna</span>
+        </div>
+        <span style="font-size:13px;color:#6B675F">Navigate opens Google Maps. Raha doesn't track you continuously.</span>
+      </div>
+      <div style="padding:12px 16px 16px;flex:none"><span style="height:64px;background:#F2A516;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-weight:700;font-size:18px">I've arrived · ደርሻለሁ<span>→</span></span></div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">3.2 Confirm pickup + photo</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>11:06</span><span>3G ▮▮▯ 57%</span></div>
+      <div style="padding:4px 16px 16px;flex:none;display:flex;flex-direction:column;gap:12px">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px"><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#F2A516"></span><span style="height:5px;background:#E3DED3"></span><span style="height:5px;background:#E3DED3"></span><span style="height:5px;background:#E3DED3"></span></div>
+        <span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">STEP 2 OF 5 · LOAD CARGO</span>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:0 16px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:26px;line-height:1.05">Check the cargo</div>
+        <div style="display:flex;flex-direction:column;background:#FBFAF7;border:1px solid #E3DED3">
+          <div style="display:flex;align-items:center;gap:12px;padding:14px;border-bottom:1px solid #E3DED3"><span style="width:28px;height:28px;background:#15141A;color:#F2A516;display:grid;place-items:center;font-weight:700">✓</span><span style="font-size:16px">16 sacks counted</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px;border-bottom:1px solid #E3DED3"><span style="width:28px;height:28px;background:#15141A;color:#F2A516;display:grid;place-items:center;font-weight:700">✓</span><span style="font-size:16px">No visible damage</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px"><span style="width:28px;height:28px;border:2px solid #15141A;box-sizing:border-box"></span><span style="font-size:16px">Waybill received</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#D6CFC1 0 10px,#DDD7CA 10px 20px);position:relative;display:flex;align-items:end;padding:8px;box-sizing:border-box"><span style="font-family:'JetBrains Mono';font-size:10px;background:#15141A;color:#F4F1EA;padding:2px 5px">photo 1 · 11:04</span></div>
+          <div style="aspect-ratio:1;border:2px dashed #15141A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:14px;font-weight:600;box-sizing:border-box"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#15141A" stroke-width="1.75"><rect x="3" y="7" width="18" height="13"></rect><circle cx="12" cy="13.5" r="3.5"></circle><path d="M8 7l2-3h4l2 3"></path></svg>Add photo</div>
+        </div>
+        <span style="font-size:13px;color:#6B675F">Photos are compressed to ~80 KB and upload when you have signal.</span>
+      </div>
+      <div style="padding:12px 16px 16px;flex:none"><span style="height:64px;background:#F2A516;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-weight:700;font-size:18px">Confirm pickup<span>→</span></span></div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">3.3 Start trip</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>13:52</span><span>3G ▮▮▯ 55%</span></div>
+      <div style="padding:4px 16px 16px;flex:none;display:flex;flex-direction:column;gap:12px">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px"><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#F2A516"></span><span style="height:5px;background:#E3DED3"></span><span style="height:5px;background:#E3DED3"></span></div>
+        <span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">STEP 3 OF 5 · DEPART</span>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:0 16px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:26px;line-height:1.05">Ready to leave Addis</div>
+        <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:16px;display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:13px;color:#6B675F">On board · drop order</span>
+          <div style="display:flex;gap:12px;align-items:start"><span style="font-family:'JetBrains Mono';font-weight:600;width:22px;height:22px;background:#15141A;color:#F4F1EA;display:grid;place-items:center;font-size:12px;flex:none">1</span><div><div style="font-weight:700">Habesha Cement · 8,000 kg</div><div style="font-size:14px;color:#6B675F">Hawassa Industrial Park</div></div></div>
+          <div style="display:flex;gap:12px;align-items:start"><span style="font-family:'JetBrains Mono';font-weight:600;width:22px;height:22px;background:#F2A516;display:grid;place-items:center;font-size:12px;flex:none">2</span><div><div style="font-weight:700">Sheba Agro · 800 kg</div><div style="font-size:14px;color:#6B675F">Piassa, Hawassa</div></div></div>
+          <div style="display:flex;height:18px;gap:2px"><div style="flex:80;background:#15141A"></div><div style="flex:8;background:#F2A516"></div><div style="flex:12;background:repeating-linear-gradient(135deg,#E3DED3 0 4px,transparent 4px 8px);border:1px dashed #C9C4B8"></div></div>
+        </div>
+        <div style="font-size:15px;line-height:1.5;color:#46433D">Both shippers and receivers get an SMS when you start. Receivers get their delivery PIN.</div>
+      </div>
+      <div style="padding:12px 16px 16px;flex:none"><span style="height:64px;background:#F2A516;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-weight:700;font-size:18px">Start trip · ጉዞ ጀምር<span>→</span></span></div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">3.4 In transit · offline</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>15:20</span><span>— no signal · 49%</span></div>
+      <div style="background:#15141A;color:#F4F1EA;padding:10px 16px;display:flex;align-items:center;gap:10px;font-size:13px;flex:none"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#F2A516" stroke-width="1.75"><path d="M2 12a10 10 0 0 1 20 0M5.5 12a6.5 6.5 0 0 1 13 0M9 12a3 3 0 0 1 6 0"></path><path d="M3 21L21 3"></path></svg><span>Offline. 1 update saved, will send automatically.</span></div>
+      <div style="padding:14px 16px 0;flex:none;display:flex;flex-direction:column;gap:12px">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px"><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#F2A516"></span><span style="height:5px;background:#E3DED3"></span></div>
+        <span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">STEP 4 OF 5 · ON THE ROAD</span>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:12px 16px;display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;gap:14px"><div style="display:flex;flex-direction:column;align-items:center;width:20px"><span style="width:16px;height:16px;background:#15141A"></span><span style="width:3px;flex:1;background:#15141A;min-height:30px"></span></div><div style="padding-bottom:16px"><div style="font-weight:700;font-size:16px">Addis Ababa</div><div style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">Departed 14:02</div></div></div>
+        <div style="display:flex;gap:14px"><div style="display:flex;flex-direction:column;align-items:center;width:20px"><span style="width:14px;height:14px;background:#15141A;border-radius:50%"></span><span style="width:3px;flex:1;background:#15141A;min-height:30px"></span></div><div style="padding-bottom:16px"><div style="font-weight:700;font-size:16px">Mojo</div><div style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">Checked in 15:01 · sent</div></div></div>
+        <div style="display:flex;gap:14px"><div style="display:flex;flex-direction:column;align-items:center;width:20px"><span style="width:20px;height:20px;background:#F2A516;border:3px solid #15141A;border-radius:50%;box-sizing:border-box"></span><span style="width:3px;flex:1;background:repeating-linear-gradient(180deg,#C9C4B8 0 6px,transparent 6px 10px);min-height:30px"></span></div><div style="padding-bottom:16px"><div style="font-weight:700;font-size:16px">Meki</div><div style="font-family:'JetBrains Mono';font-size:12px;color:#8A5A00;font-weight:600">Checked in 15:19 · waiting to send</div></div></div>
+        <div style="display:flex;gap:14px"><div style="display:flex;flex-direction:column;align-items:center;width:20px"><span style="width:14px;height:14px;border:2px solid #C9C4B8;border-radius:50%;box-sizing:border-box"></span><span style="width:3px;flex:1;background:repeating-linear-gradient(180deg,#C9C4B8 0 6px,transparent 6px 10px);min-height:30px"></span></div><div style="padding-bottom:16px"><div style="font-weight:600;font-size:16px;color:#6B675F">Shashemene</div></div></div>
+        <div style="display:flex;gap:14px"><div style="display:flex;flex-direction:column;align-items:center;width:20px"><span style="width:14px;height:14px;border:2px solid #C9C4B8;box-sizing:border-box"></span></div><div><div style="font-weight:600;font-size:16px;color:#6B675F">Hawassa</div><div style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">2 drops</div></div></div>
+      </div>
+      <div style="padding:12px 16px 16px;flex:none;display:grid;grid-template-columns:1fr 2fr;gap:8px">
+        <span style="height:64px;border:2px solid #15141A;display:grid;place-items:center;font-weight:700;font-size:15px">Report issue</span>
+        <span style="height:64px;background:#F2A516;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-weight:700;font-size:17px">Check in<span>→</span></span>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'JetBrains Mono';font-size:13px;color:#8A5A00;font-weight:600">04</span><h2 style="margin:0;font-family:Archivo;font-stretch:112%;font-weight:700;font-size:28px">Deliver</h2><span style="color:#6B675F;font-size:14px">The receiver's 4-digit PIN proves hand-over. Works offline: the PIN is verified against a hash stored on the phone.</span></div>
+  <div style="display:flex;gap:40px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">4.1 Enter delivery PIN</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>17:48</span><span>3G ▮▯▯ 41%</span></div>
+      <div style="padding:4px 16px 16px;flex:none;display:flex;flex-direction:column;gap:12px">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px"><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#15141A"></span><span style="height:5px;background:#F2A516"></span></div>
+        <span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">STEP 5 OF 5 · DROP 2 OF 2</span>
+      </div>
+      <div style="flex:1;padding:0 16px;display:flex;flex-direction:column;gap:12px">
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:26px;line-height:1.05">Ask Dawit for the PIN</div>
+        <div style="font-size:15px;color:#46433D;line-height:1.5">Dawit Alemu, Piassa Coffee Traders. He received it by SMS.</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px">
+          <span style="height:72px;background:#FBFAF7;border:2px solid #15141A;display:grid;place-items:center;font:600 34px 'JetBrains Mono'">4</span><span style="height:72px;background:#FBFAF7;border:2px solid #15141A;display:grid;place-items:center;font:600 34px 'JetBrains Mono'">7</span><span style="height:72px;background:#FBFAF7;border:2px solid #F2A516;display:grid;place-items:center"></span><span style="height:72px;background:#FBFAF7;border:1px solid #C9C4B8"></span>
+        </div>
+        <span style="font-size:13px;color:#6B675F;margin-top:4px">Receiver can't find it? <u>Call Raha support</u></span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);background:#E3DED3;gap:1px;flex:none">
+        <span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">1</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">2</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">3</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">4</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">5</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">6</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">7</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">8</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">9</span><span style="height:58px;background:#EDEAE2"></span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font:500 24px 'JetBrains Mono'">0</span><span style="height:58px;background:#EDEAE2;display:grid;place-items:center;font-size:22px">⌫</span>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">4.2 Proof of delivery</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>17:50</span><span>3G ▮▯▯ 41%</span></div>
+      <div style="padding:8px 16px;flex:none;display:flex;align-items:center;gap:10px;background:#E2EFE7;color:#1F5A3D;font-weight:600;font-size:14px"><span style="width:22px;height:22px;background:#2F7A55;color:#FBFAF7;display:grid;place-items:center;font-size:13px">✓</span>PIN correct · Dawit Alemu</div>
+      <div style="flex:1;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:26px;line-height:1.05">Photo of delivered cargo</div>
+        <div style="flex:1;max-height:300px;background:repeating-linear-gradient(135deg,#D6CFC1 0 12px,#DDD7CA 12px 24px);position:relative;display:flex;align-items:end;justify-content:space-between;padding:10px">
+          <span style="font-family:'JetBrains Mono';font-size:10px;background:#15141A;color:#F4F1EA;padding:3px 6px">17:49 · Hawassa</span>
+          <span style="font-size:13px;background:#FBFAF7;padding:6px 10px;font-weight:600">Retake</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:14px;color:#6B675F">Anything wrong?</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><span style="padding:12px 14px;background:#15141A;color:#F4F1EA;font-size:14px;font-weight:600">All good</span><span style="padding:12px 14px;border:1px solid #C9C4B8;font-size:14px">Short count</span><span style="padding:12px 14px;border:1px solid #C9C4B8;font-size:14px">Damaged</span></div>
+        </div>
+      </div>
+      <div style="padding:12px 16px 16px;flex:none"><span style="height:64px;background:#F2A516;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-weight:700;font-size:18px">Complete delivery<span>→</span></span></div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">4.3 Trip complete</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#15141A;color:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>17:51</span><span>3G ▮▯▯ 41%</span></div>
+      <div style="flex:1;padding:32px 20px;display:flex;flex-direction:column;gap:20px">
+        <span style="font-family:'JetBrains Mono';font-size:12px;color:#F2A516">TRIP COMPLETE · 3 h 49 min</span>
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:34px;line-height:1;letter-spacing:-0.02em">2 drops done in Hawassa.</div>
+        <div style="display:flex;flex-direction:column;border-top:1px solid #34333C">
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #34333C"><span style="color:#C9C4B8">Habesha Cement</span><span style="font-family:'JetBrains Mono'">ETB 21,500</span></div>
+          <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #34333C"><span style="color:#C9C4B8">Sheba Agro · Raha match</span><span style="font-family:'JetBrains Mono';color:#F2A516">+ ETB 6,400</span></div>
+          <div style="display:flex;justify-content:space-between;padding:16px 0"><span style="font-weight:700">Trip total</span><span style="font-family:'JetBrains Mono';font-weight:600;font-size:20px">ETB 27,900</span></div>
+        </div>
+        <div style="background:#24232B;padding:14px;font-size:14px;line-height:1.5;color:#C9C4B8">Payment is recorded by Kebede Transport (your fleet). You'll get an SMS when it's marked paid.</div>
+      </div>
+      <div style="padding:16px;flex:none;display:flex;flex-direction:column;gap:8px"><span style="height:64px;background:#F2A516;color:#15141A;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-weight:700;font-size:18px">Find a return load<span>→</span></span><span style="height:48px;display:grid;place-items:center;color:#C9C4B8;font-size:15px">Back to home</span></div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">4.4 Return-load prompt</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>17:52</span><span>3G ▮▯▯ 41%</span></div>
+      <div style="flex:1;padding:16px;display:flex;flex-direction:column;gap:14px;overflow:hidden">
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:26px;line-height:1.05">Don't drive back empty</div>
+        <div style="background:#15141A;color:#F4F1EA;padding:16px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:13px;color:#9A968C">Your truck now</span>
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:Archivo;font-stretch:110%;font-weight:700;font-size:19px">Hawassa → Addis</span><span style="font-family:'JetBrains Mono';color:#F2A516">10 t free</span></div>
+          <div style="height:18px;background:repeating-linear-gradient(135deg,#34333C 0 4px,transparent 4px 8px);border:1px dashed #6B675F"></div>
+        </div>
+        <div style="background:#FBFAF7;border:2px solid #15141A;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between"><span style="font-weight:700;font-size:17px">Hawassa → Addis</span><span style="font-family:'JetBrains Mono';font-weight:600">ETB 14,000</span></div><span style="font-size:14px;color:#46433D">6,000 kg · Textiles, Hawassa IP · tomorrow 07:00</span></div>
+        <div style="background:#FBFAF7;border:1px solid #E3DED3;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between"><span style="font-weight:700;font-size:17px">Shashemene → Addis</span><span style="font-family:'JetBrains Mono';font-weight:600">ETB 5,600</span></div><span style="font-size:14px;color:#46433D">2,400 kg · Avocados · tomorrow 09:00</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid #E3DED3"><span style="font-size:15px">Alert me for new return loads</span><span style="width:56px;height:32px;background:#15141A;display:flex;justify-content:end;padding:3px;box-sizing:border-box"><span style="width:26px;height:26px;background:#F2A516"></span></span></div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'JetBrains Mono';font-size:13px;color:#8A5A00;font-weight:600">05</span><h2 style="margin:0;font-family:Archivo;font-stretch:112%;font-weight:700;font-size:28px">Earnings &amp; profile</h2><span style="color:#6B675F;font-size:14px">Recorded payments, not a wallet. Profile shows verification and the fleet the driver belongs to.</span></div>
+  <div style="display:flex;gap:40px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">5.1 Earnings &amp; history</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="padding:8px 16px 16px;flex:none;display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:Archivo;font-stretch:112%;font-weight:700;font-size:24px">Earnings</span>
+        <div style="display:flex;gap:6px"><span style="padding:9px 12px;border:1px solid #C9C4B8;font-size:14px">Week</span><span style="padding:9px 12px;background:#15141A;color:#F4F1EA;font-size:14px;font-weight:600">Meskerem</span><span style="padding:9px 12px;border:1px solid #C9C4B8;font-size:14px">Year</span></div>
+        <div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:34px">ETB 86,450</div><div style="font-size:14px;color:#6B675F">14 trips · 5 were Raha matches (ETB 24,100)</div></div>
+        <div style="display:flex;align-items:end;gap:6px;height:80px">
+          <span style="flex:1;height:40%;background:#15141A"></span><span style="flex:1;height:65%;background:#15141A"></span><span style="flex:1;height:30%;background:#15141A"></span><span style="flex:1;height:80%;background:linear-gradient(#F2A516 0 30%,#15141A 30%)"></span><span style="flex:1;height:55%;background:#15141A"></span><span style="flex:1;height:100%;background:linear-gradient(#F2A516 0 22%,#15141A 22%)"></span><span style="flex:1;height:20%;background:#C9C4B8"></span>
+        </div>
+      </div>
+      <div style="flex:1;overflow:hidden;border-top:1px solid #E3DED3">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #E3DED3"><div><div style="font-weight:700">Addis → Hawassa</div><div style="font-size:13px;color:#6B675F">Today · 2 drops</div></div><div style="text-align:right"><div style="font-family:'JetBrains Mono';font-weight:600">27,900</div><div style="font-size:12px;color:#8A5A00;font-weight:600">Pending</div></div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #E3DED3"><div><div style="font-weight:700">Dire Dawa → Addis</div><div style="font-size:13px;color:#6B675F">Mon</div></div><div style="text-align:right"><div style="font-family:'JetBrains Mono';font-weight:600">9,800</div><div style="font-size:12px;color:#2F7A55;font-weight:600">Paid · Telebirr</div></div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #E3DED3"><div><div style="font-weight:700">Addis → Dire Dawa</div><div style="font-size:13px;color:#6B675F">Sat</div></div><div style="text-align:right"><div style="font-family:'JetBrains Mono';font-weight:600">24,000</div><div style="font-size:12px;color:#2F7A55;font-weight:600">Paid · CBE</div></div></div>
+      </div>
+      <div style="height:68px;background:#FBFAF7;border-top:1px solid #E3DED3;display:grid;grid-template-columns:repeat(4,1fr);flex:none">
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"></path></svg>Home</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><path d="M4 8l8-4 8 4v8l-8 4-8-4zM4 8l8 4 8-4M12 12v8"></path></svg>Loads</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;color:#6B675F"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#6B675F" stroke-width="1.75"><circle cx="5" cy="18" r="2"></circle><circle cx="19" cy="6" r="2"></circle><path d="M7 18h7a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h7"></path></svg>Trips</span>
+        <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:12px;font-weight:700;position:relative"><span style="position:absolute;top:0;left:25%;right:25%;height:3px;background:#F2A516"></span><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#15141A" stroke-width="2"><rect x="3" y="6" width="18" height="12"></rect><circle cx="12" cy="12" r="2.5"></circle></svg>Earnings</span>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">5.2 Profile &amp; verification</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="background:#15141A;color:#F4F1EA;flex:none">
+        <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+        <div style="padding:16px 16px 20px;display:flex;align-items:center;gap:14px"><span style="width:64px;height:64px;border-radius:50%;background:#F2A516;color:#15141A;display:grid;place-items:center;font-weight:700;font-size:22px">AK</span><div><div style="font-family:Archivo;font-stretch:112%;font-weight:700;font-size:22px">Abebe Kebede</div><div style="font-size:13px;color:#9A968C">Driver at Kebede Transport · since 2024</div></div></div>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:13px;color:#6B675F">Verification</span>
+        <div style="display:flex;flex-direction:column;background:#FBFAF7;border:1px solid #E3DED3">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;border-bottom:1px solid #E3DED3"><span style="font-size:15px">Phone number</span><span style="font-size:13px;font-weight:700;color:#1F5A3D">✓ Verified</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;border-bottom:1px solid #E3DED3"><span style="font-size:15px">Driving licence · Grade 5</span><span style="font-size:13px;font-weight:700;color:#1F5A3D">✓ Verified</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;border-bottom:1px solid #E3DED3"><span style="font-size:15px">Fayda ID</span><span style="font-size:13px;font-weight:700;color:#1F5A3D">✓ Verified</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;background:#FCEBC4"><span style="font-size:15px">Third-party insurance</span><span style="font-size:13px;font-weight:700;color:#5E3E00">Expires in 12 days</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;background:#FBFAF7;border:1px solid #E3DED3">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;border-bottom:1px solid #E3DED3"><span style="font-size:15px">Language</span><span style="font-size:15px;color:#6B675F">አማርኛ / English</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px;border-bottom:1px solid #E3DED3"><span style="font-size:15px">Data saver</span><span style="font-size:15px;font-weight:600">On</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px"><span style="font-size:15px">Help · Raha support</span><span style="font-family:'JetBrains Mono';font-size:14px">8817</span></div>
+        </div>
+      </div>
+    </div></div>
+
+    <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:'JetBrains Mono';font-size:12px;color:#46433D">5.3 Vehicle</span>
+    <div style="width:360px;height:760px;border:10px solid #0B0B0E;border-radius:38px;overflow:hidden;display:flex;flex-direction:column;background:#F4F1EA;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)">
+      <div style="height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-family:'JetBrains Mono';font-size:11px;flex:none"><span>9:41</span><span>3G ▮▮▯ 62%</span></div>
+      <div style="height:60px;display:flex;align-items:center;gap:8px;padding:0 12px;border-bottom:1px solid #E3DED3;flex:none"><span style="width:48px;height:48px;display:grid;place-items:center;font-size:22px">←</span><span style="font-family:Archivo;font-stretch:112%;font-weight:700;font-size:20px">My truck</span></div>
+      <div style="flex:1;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:14px">
+        <div style="background:#15141A;color:#F4F1EA;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono';font-size:28px;font-weight:600;letter-spacing:0.04em">3-48213 AA</span><span style="font-size:14px;color:#C9C4B8">Isuzu FSR 2019 · Dry box · Kebede Transport</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E3DED3;border:1px solid #E3DED3">
+          <div style="background:#FBFAF7;padding:14px"><div style="font-size:12px;color:#6B675F">Max load</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:18px">10,000 kg</div></div>
+          <div style="background:#FBFAF7;padding:14px"><div style="font-size:12px;color:#6B675F">Box volume</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:18px">38 m³</div></div>
+          <div style="background:#FBFAF7;padding:14px"><div style="font-size:12px;color:#6B675F">Body</div><div style="font-weight:600;font-size:16px">Covered dry box</div></div>
+          <div style="background:#FBFAF7;padding:14px"><div style="font-size:12px;color:#6B675F">Status</div><div style="font-weight:600;font-size:16px">✓ Verified</div></div>
+        </div>
+        <span style="font-size:13px;color:#6B675F">Load right now</span>
+        <div style="display:flex;height:22px;gap:2px"><div style="flex:8;background:#15141A"></div><div style="flex:2;background:repeating-linear-gradient(135deg,#E3DED3 0 4px,transparent 4px 8px);border:1px dashed #C9C4B8"></div></div>
+        <span style="height:56px;border:1.5px solid #15141A;display:flex;align-items:center;justify-content:center;font-weight:600">Update how much is loaded</span>
+        <span style="font-size:13px;color:#6B675F;line-height:1.5">Truck details are managed by your fleet owner, Tesfaye Kebede. Ask them to change plate or capacity.</span>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<footer style="display:flex;gap:24px;font-size:14px;color:#46433D;flex-wrap:wrap"><a href="Raha Identity.dc.html">← Identity</a><a href="Raha Shipper App.dc.html">Shipper app →</a></footer>
+</div>
+</x-dc>
+</body>
+</html>

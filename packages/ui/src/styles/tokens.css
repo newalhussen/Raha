@@ -1,0 +1,107 @@
+/*
+  Raha design tokens — "Basalt & Signal Amber".
+  Source of truth: design/Raha Identity (colour, type, signature components).
+
+  Semantic tokens (--bg, --surface, --ink …) switch between the light product theme and the
+  dark Operations theme (.theme-ops). Components only use semantic tokens.
+*/
+:root {
+  /* brand palette */
+  --basalt: #15141a;
+  --night: #0f0e13;
+  --graphite: #24232b;
+  --graphite-2: #2a2932;
+  --graphite-3: #34333c;
+  --amber: #f2a516;
+  --amber-hover: #e09a0d;
+  --amber-tint: #fceac4;
+  --amber-ink: #8a5a00;
+  --amber-deep: #5e3e00;
+  --bone: #f4f1ea;
+  --paper: #fbfaf7;
+  --sand: #edeae2;
+  --sand-2: #e9e4d9;
+  --line: #e3ded3;
+  --line-strong: #c9c4b8;
+  --muted: #6b675f;
+  --muted-strong: #46433d;
+  --stone: #9a968c;
+  --lapis: #3346b8;
+  --lapis-tint: #e3e6f7;
+  --lapis-ink: #26338a;
+  --green: #2f7a55;
+  --green-tint: #e2efe7;
+  --green-ink: #1f5a3d;
+  --red: #b4410e;
+  --red-tint: #f6e2d8;
+  --red-ink: #8a300a;
+
+  /* typography */
+  --font-display: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+  --font-ui: var(--font-instrument), 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace;
+  --font-ethiopic: var(--font-ethiopic), 'Noto Sans Ethiopic', sans-serif;
+
+  /* semantic — light (shipper / broker / fleet / marketing) */
+  --bg: var(--bone);
+  --surface: var(--paper);
+  --surface-alt: var(--sand);
+  --surface-hover: var(--bone);
+  --ink: var(--basalt);
+  --ink-soft: var(--muted-strong);
+  --text-muted: var(--muted);
+  --border: var(--line);
+  --border-strong: var(--line-strong);
+  --input-bg: #ffffff;
+  --header-bg: var(--basalt);
+  --header-ink: var(--bone);
+  --header-muted: var(--stone);
+  --header-line: var(--graphite-3);
+  --header-active: var(--graphite-2);
+  --accent: var(--amber);
+  --accent-ink: var(--amber-ink);
+  --hatch-a: var(--line);
+  --hatch-b: transparent;
+  --capbar-ink: var(--basalt);
+  --focus: var(--amber);
+
+  /* status pills */
+  --pill-neutral-bg: var(--sand); --pill-neutral-fg: var(--muted-strong); --pill-neutral-dot: var(--stone);
+  --pill-amber-bg: var(--amber-tint); --pill-amber-fg: var(--amber-deep); --pill-amber-dot: var(--amber);
+  --pill-lapis-bg: var(--lapis-tint); --pill-lapis-fg: var(--lapis-ink); --pill-lapis-dot: var(--lapis);
+  --pill-green-bg: var(--green-tint); --pill-green-fg: var(--green-ink); --pill-green-dot: var(--green);
+  --pill-red-bg: var(--red-tint); --pill-red-fg: var(--red-ink); --pill-red-dot: var(--red);
+  --pill-ink-bg: var(--basalt); --pill-ink-fg: var(--bone); --pill-ink-dot: var(--amber);
+
+  /* layout */
+  --maxw: 1280px;
+  --radius-round: 50%;
+}
+
+/* Operations: a control room, so dark. Same components, different semantic tokens. */
+.theme-ops {
+  --bg: var(--night);
+  --surface: var(--basalt);
+  --surface-alt: var(--graphite);
+  --surface-hover: var(--graphite);
+  --ink: var(--bone);
+  --ink-soft: #c9c4b8;
+  --text-muted: var(--stone);
+  --border: var(--graphite-2);
+  --border-strong: var(--graphite-3);
+  --input-bg: var(--graphite);
+  --header-bg: var(--basalt);
+  --header-line: var(--graphite-2);
+  --header-active: var(--graphite-2);
+  --hatch-a: var(--graphite-3);
+  --capbar-ink: var(--bone);
+
+  --pill-neutral-bg: var(--graphite-2); --pill-neutral-fg: #c9c4b8; --pill-neutral-dot: var(--stone);
+  --pill-amber-bg: #3b2e10; --pill-amber-fg: var(--amber); --pill-amber-dot: var(--amber);
+  --pill-lapis-bg: #1d2352; --pill-lapis-fg: #a7b3ff; --pill-lapis-dot: #6f82ff;
+  --pill-green-bg: #17352a; --pill-green-fg: #7cc4a0; --pill-green-dot: #7cc4a0;
+  --pill-red-bg: #4a2416; --pill-red-fg: #f08a5d; --pill-red-dot: #f08a5d;
+  --pill-ink-bg: var(--bone); --pill-ink-fg: var(--basalt); --pill-ink-dot: var(--amber);
+  --ops-orange: #f08a5d;
+  --ops-mint: #7cc4a0;
+}

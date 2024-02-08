@@ -1,0 +1,30 @@
+{
+  "name": "raha",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Raha — Ethiopian freight marketplace. Matches cargo with truck capacity already on the road, including return loads.",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/api",
+    "apps/web",
+    "apps/ops"
+  ],
+  "scripts": {
+    "build:packages": "npm run build -w @raha/contracts",
+    "build": "npm run build:packages && npm run build -w @raha/api && npm run build -w @raha/web && npm run build -w @raha/ops",
+    "dev:api": "npm run start:dev -w @raha/api",
+    "dev:web": "npm run dev -w @raha/web",
+    "dev:ops": "npm run dev -w @raha/ops",
+    "db:migrate": "npm run migrate -w @raha/api",
+    "db:seed": "npm run seed -w @raha/api",
+    "db:reset": "npm run db:reset -w @raha/api",
+    "typecheck": "npm run typecheck -w @raha/contracts && npm run typecheck -w @raha/api && npm run typecheck -w @raha/web && npm run typecheck -w @raha/ops",
+    "test": "npm run test -w @raha/api"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3"
+  }
+}

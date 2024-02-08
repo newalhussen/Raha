@@ -1,0 +1,22 @@
+# PostgreSQL 16 + PostGIS for local development.
+# Matches DATABASE_URL in apps/api/.env.example when you change the port to 5432,
+# or keep 5433 to match the default .env.example as-is.
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: raha
+      POSTGRES_PASSWORD: raha_dev
+      POSTGRES_DB: raha
+    ports:
+      - '5433:5432'
+    volumes:
+      - raha-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U raha -d raha']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  raha-pg:

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/industry-37dc6a56-aa49-4d0d-8002-ef72d326eda5/styles.css">
+<script src="_ds/industry-37dc6a56-aa49-4d0d-8002-ef72d326eda5/_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--color-neutral-200)} a{color:var(--color-accent-700)} a:hover{color:var(--color-accent-900)}</style>
+</helmet>
+<div style="padding:48px;display:flex;flex-direction:column;gap:40px;font-family:var(--font-body);color:var(--color-text);width:max-content">
+<header style="display:flex;align-items:end;gap:48px">
+  <div><div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">A — Responsive web</div><h1 style="font-size:48px;margin:0;line-height:1">Raha for Shippers</h1></div>
+  <p style="margin:0;max-width:620px;font-size:15px;text-wrap:pretty">A business describes the cargo once. Raha shows trucks already going that way with room to spare, ranked by how well the load fits, and the booking follows the shipment to a PIN-confirmed delivery.</p>
+  <a href="Raha Index.dc.html" style="font-size:13px">Ecosystem index</a>
+</header>
+
+<div style="display:flex;gap:40px;flex-wrap:wrap;align-items:start;max-width:3000px">
+
+<figure data-screen-label="S1 New shipment and matches" style="margin:0;display:flex;flex-direction:column;gap:12px">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">S1 · New shipment → transport options · 1440</figcaption>
+<div style="width:1440px;height:900px;background:var(--color-bg);display:grid;grid-template-columns:232px 1fr;border:1px solid var(--color-divider)">
+  <aside style="border-right:1px solid var(--color-divider);display:flex;flex-direction:column;padding:20px 0">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 20px 20px"><svg viewBox="0 0 24 24" width="20" height="20" fill="var(--color-text)"><rect x="0" y="0" width="8" height="24"></rect><rect x="10" y="0" width="14" height="11" fill="var(--color-accent)"></rect><path d="M10 13H16.5L24 24H17.5Z"></path></svg><span style="font-family:var(--font-heading);font-weight:600;font-size:19px;letter-spacing:0.12em">RAHA</span></div>
+    <div style="margin:0 12px 16px;padding:10px 12px;border:1px solid var(--color-divider);display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:500">Sheba Agro Processing PLC</span><span class="text-muted" style="font-size:12px">Shipper · Tigist Haile, Logistics lead</span></div>
+    <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6"><div style="padding:10px 20px;font-size:14px;color:{{ n.c }};background:{{ n.bg }};box-shadow:{{ n.sh }}">{{ n.label }}</div></sc-for>
+    <div style="margin-top:auto;padding:0 20px;font-size:12px" class="text-muted">Team: 4 members · 2 depots</div>
+  </aside>
+  <main style="display:grid;grid-template-columns:420px 1fr;min-width:0">
+    <section style="border-right:1px solid var(--color-divider);padding:28px;display:flex;flex-direction:column;gap:18px">
+      <div><div class="text-muted" style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase">New shipment · draft</div><h2 style="font-size:32px;margin:4px 0 0">What are you sending?</h2></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:12px">
+        <div style="display:flex;flex-direction:column;align-items:center;padding-top:30px"><span style="width:10px;height:10px;background:var(--color-text)"></span><span style="flex:1;width:1px;background:var(--color-text)"></span><span style="width:10px;height:10px;border:2px solid var(--color-text)"></span></div>
+        <div style="display:flex;flex-direction:column;gap:12px"><div class="field"><label>Pickup</label><div class="input" style="display:flex;align-items:center">Warehouse 2, Akaki Kality, Addis Ababa</div></div><div class="field"><label>Drop-off</label><div class="input" style="display:flex;align-items:center">Lucy Bakery Supplies, Piassa, Hawassa</div></div></div>
+      </div>
+      <div class="field"><label>Cargo</label><div class="input" style="display:flex;align-items:center">Packaged flour, 32 × 25 kg sacks</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div class="field"><label>Weight</label><div class="input" style="display:flex;align-items:center;justify-content:space-between">800 <span class="text-muted">kg</span></div></div><div class="field"><label>Volume (optional)</label><div class="input" style="display:flex;align-items:center;justify-content:space-between">2.4 <span class="text-muted">m³</span></div></div></div>
+      <div class="field"><label>Ready for pickup</label><div class="seg"><label class="seg-opt"><input type="radio" name="w" checked="">Today</label><label class="seg-opt"><input type="radio" name="w">Tomorrow</label><label class="seg-opt"><input type="radio" name="w">Pick a date</label></div></div>
+      <div class="field"><label>Receiver (gets SMS + delivery PIN)</label><div class="input" style="display:flex;align-items:center">Hana Alemu · 0916 44 21 09</div></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><span class="tag tag-neutral">Keep dry</span><span class="tag tag-neutral">Hand-loaded</span><span class="tag tag-outline">+ Handling note</span></div>
+    </section>
+    <section style="padding:28px;display:flex;flex-direction:column;gap:16px;min-width:0;overflow:hidden">
+      <div style="display:flex;justify-content:space-between;align-items:end"><div><div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700)">3 trucks with space on this route</div><h2 style="font-size:32px;margin:4px 0 0">Transport options</h2></div><div class="seg"><label class="seg-opt"><input type="radio" name="s" checked="">Best fit</label><label class="seg-opt"><input type="radio" name="s">Earliest</label><label class="seg-opt"><input type="radio" name="s">Lowest price</label></div></div>
+      <sc-for list="{{ options }}" as="o" hint-placeholder-count="3">
+        <div class="blueprint" style="padding:18px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 180px;gap:24px;align-items:center;border-color:{{ o.border }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;gap:8px;align-items:center"><span class="tag {{ o.tag }}">{{ o.badge }}</span><span class="text-muted" style="font-size:12px">{{ o.source }}</span></div>
+            <div style="font-family:var(--font-heading);font-weight:600;font-size:22px">{{ o.truck }}</div>
+            <div style="font-size:13px">{{ o.driver }}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:12px"><span>{{ o.cap }}</span><span style="color:var(--color-accent-700)">{{ o.free }}</span></div>
+            <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:2px;height:14px"><sc-for list="{{ o.cells }}" as="c"><span style="background:{{ c.bg }};border:1px solid {{ c.b }}"></span></sc-for></div>
+            <div class="text-muted" style="font-size:12px">{{ o.when }}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:end;gap:8px"><div style="font-family:var(--font-heading);font-weight:600;font-size:26px">ETB {{ o.price }}</div><span class="btn {{ o.btn }}" style="width:100%">{{ o.cta }}</span></div>
+        </div>
+      </sc-for>
+      <div style="font-size:13px;padding-top:4px" class="text-muted">No exact fit? Post the request and Raha's operations desk and partner brokers will find a truck, usually within 2 hours.</div>
+    </section>
+  </main>
+</div></figure>
+
+<figure data-screen-label="S2 Shipment detail" style="margin:0;display:flex;flex-direction:column;gap:12px">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">S2 · Shipment detail — status, proof, messages · 1440</figcaption>
+<div style="width:1440px;height:900px;background:var(--color-bg);display:grid;grid-template-columns:232px 1fr 380px;border:1px solid var(--color-divider)">
+  <aside style="border-right:1px solid var(--color-divider);display:flex;flex-direction:column;padding:20px 0">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 20px 20px"><svg viewBox="0 0 24 24" width="20" height="20" fill="var(--color-text)"><rect x="0" y="0" width="8" height="24"></rect><rect x="10" y="0" width="14" height="11" fill="var(--color-accent)"></rect><path d="M10 13H16.5L24 24H17.5Z"></path></svg><span style="font-family:var(--font-heading);font-weight:600;font-size:19px;letter-spacing:0.12em">RAHA</span></div>
+    <div style="margin:0 12px 16px;padding:10px 12px;border:1px solid var(--color-divider);display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:500">Sheba Agro Processing PLC</span><span class="text-muted" style="font-size:12px">Shipper · Tigist Haile, Logistics lead</span></div>
+    <sc-for list="{{ nav2 }}" as="n" hint-placeholder-count="6"><div style="padding:10px 20px;font-size:14px;color:{{ n.c }};background:{{ n.bg }};box-shadow:{{ n.sh }}">{{ n.label }}</div></sc-for>
+  </aside>
+  <main style="padding:28px 32px;display:flex;flex-direction:column;gap:22px;min-width:0">
+    <div style="display:flex;justify-content:space-between;align-items:start"><div><div class="text-muted" style="font-size:13px">Shipments / RH-20931</div><h2 style="font-size:40px;margin:4px 0 0;line-height:1">Addis Ababa → Hawassa</h2><div style="font-size:14px;margin-top:6px">800 kg packaged flour · booked by Tigist Haile · Meskerem 27</div></div><span class="tag" style="background:var(--color-accent);color:var(--color-bg);font-size:13px;padding:6px 12px">In transit · ETA 16:45</span></div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--color-divider)">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5"><div style="padding:14px;border-right:1px solid var(--color-divider);display:flex;flex-direction:column;gap:6px;box-shadow:{{ s.sh }}"><span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:{{ s.c }}">{{ s.n }}</span><span style="font-family:var(--font-heading);font-weight:600;font-size:18px;color:{{ s.c }}">{{ s.label }}</span><span class="text-muted" style="font-size:12px">{{ s.time }}</span></div></sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px">
+      <div class="card blueprint" style="padding:18px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="card-kicker">Transport provider</div><div style="display:flex;gap:14px;align-items:center"><div class="duotone" style="width:56px;height:56px;background:var(--color-neutral-400);flex:none"></div><div><div class="card-title">Abebe Kebede</div><div style="font-size:13px">Abay Transport S.C. · 214 Raha trips</div></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;border-top:1px solid var(--color-divider);padding-top:10px"><span class="text-muted">Truck</span><span>Isuzu FSR · 3-B 48213 AA</span><span class="text-muted">Verified</span><span>Licence, Bolo, insurance</span><span class="text-muted">Shared load</span><span>8 t own cargo on board</span></div></div>
+      <div class="card blueprint" style="padding:18px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="card-kicker">Proof</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div class="duotone" style="aspect-ratio:4/3;background:var(--color-neutral-400);display:flex;align-items:end;padding:6px;font-size:11px;color:var(--color-bg)">Pickup photo · 12:04</div><div style="aspect-ratio:4/3;border:1px dashed var(--color-neutral-500);display:grid;place-items:center;font-size:12px" class="text-muted">Delivery photo on arrival</div></div><div style="display:flex;justify-content:space-between;font-size:13px;border-top:1px solid var(--color-divider);padding-top:10px"><span>Delivery PIN sent to Hana Alemu</span><span style="font-family:var(--font-heading);font-weight:600;letter-spacing:0.2em">••••</span></div></div>
+    </div>
+    <div style="border:1px solid var(--color-divider);display:grid;grid-template-columns:repeat(4,1fr)">
+      <div style="padding:14px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Agreed price</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">ETB 4,200</div></div>
+      <div style="padding:14px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Payment</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">Cash on delivery</div></div>
+      <div style="padding:14px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Distance</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">275 km</div></div>
+      <div style="padding:14px"><div class="text-muted" style="font-size:12px">Last check-in</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">Ziway · 11:52</div></div>
+    </div>
+  </main>
+  <aside style="border-left:1px solid var(--color-divider);display:flex;flex-direction:column">
+    <div style="padding:20px;border-bottom:1px solid var(--color-divider)"><div style="font-family:var(--font-heading);font-weight:600;font-size:20px">Messages</div><div class="text-muted" style="font-size:12px">Driver replies via app, Telegram or SMS</div></div>
+    <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:14px">
+      <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="4"><div style="align-self:{{ m.align }};max-width:85%;display:flex;flex-direction:column;gap:4px"><div style="padding:10px 12px;font-size:14px;background:{{ m.bg }};color:{{ m.c }};border:1px solid var(--color-divider)">{{ m.text }}</div><span class="text-muted" style="font-size:11px;align-self:{{ m.align }}">{{ m.meta }}</span></div></sc-for>
+    </div>
+    <div style="padding:16px;border-top:1px solid var(--color-divider);display:flex;gap:8px"><div class="input" style="flex:1;display:flex;align-items:center" >Write to Abebe…</div><span class="btn btn-primary">Send</span></div>
+  </aside>
+</div></figure>
+
+<figure data-screen-label="S3 Shipments list" style="margin:0;display:flex;flex-direction:column;gap:12px">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">S3 · Shipments — active and history · tablet 1024</figcaption>
+<div style="width:1024px;background:var(--color-bg);border:1px solid var(--color-divider);display:flex;flex-direction:column">
+  <div class="nav" style="border-bottom:1px solid var(--color-divider)"><span class="nav-brand" style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" width="18" height="18" fill="var(--color-text)"><rect x="0" y="0" width="8" height="24"></rect><rect x="10" y="0" width="14" height="11" fill="var(--color-accent)"></rect><path d="M10 13H16.5L24 24H17.5Z"></path></svg>RAHA</span><a href="#" aria-current="page">Shipments</a><a href="#">Receivers</a><a href="#">Team</a><a href="#">Payments</a><span class="btn btn-primary blueprint"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>+ New shipment</span></div>
+  <div style="padding:24px;display:flex;flex-direction:column;gap:20px">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--color-divider)">
+      <div style="padding:14px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Active</div><div style="font-family:var(--font-heading);font-weight:600;font-size:30px">6</div></div>
+      <div style="padding:14px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Awaiting match</div><div style="font-family:var(--font-heading);font-weight:600;font-size:30px">2</div></div>
+      <div style="padding:14px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Delivered this month</div><div style="font-family:var(--font-heading);font-weight:600;font-size:30px">41</div></div>
+      <div style="padding:14px"><div class="text-muted" style="font-size:12px">Spent this month</div><div style="font-family:var(--font-heading);font-weight:600;font-size:30px">ETB 186k</div></div>
+    </div>
+    <table class="table">
+      <thead><tr><th>ID</th><th>Route</th><th>Cargo</th><th>Provider</th><th>Status</th><th style="text-align:right">Price</th></tr></thead>
+      <tbody><sc-for list="{{ rows }}" as="r" hint-placeholder-count="7"><tr><td style="font-family:var(--font-heading);font-weight:600">{{ r.id }}</td><td>{{ r.route }}</td><td>{{ r.cargo }}</td><td>{{ r.prov }}</td><td><span class="tag {{ r.tag }}" style="background:{{ r.bg }};color:{{ r.c }}">{{ r.status }}</span></td><td style="text-align:right">{{ r.price }}</td></tr></sc-for></tbody>
+    </table>
+  </div>
+</div></figure>
+
+<figure data-screen-label="S4 Mobile web" style="margin:0;display:flex;flex-direction:column;gap:12px">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">S4 · Mobile browser · 390</figcaption>
+<div style="display:flex;gap:24px">
+<div style="width:390px;height:844px;background:var(--color-bg);border:1px solid var(--color-divider);display:flex;flex-direction:column">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--color-divider)"><svg viewBox="0 0 24 24" width="20" height="20" fill="var(--color-text)"><rect x="0" y="0" width="8" height="24"></rect><rect x="10" y="0" width="14" height="11" fill="var(--color-accent)"></rect><path d="M10 13H16.5L24 24H17.5Z"></path></svg><span style="font-size:13px">Sheba Agro ▾</span></div>
+  <div style="padding:18px;display:flex;flex-direction:column;gap:14px">
+    <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700)">Best fit for 800 kg</div>
+    <div class="blueprint" style="padding:16px;display:flex;flex-direction:column;gap:10px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="display:flex;justify-content:space-between"><span class="tag tag-accent">Fills free space</span><span style="font-family:var(--font-heading);font-weight:600;font-size:22px">ETB 4,200</span></div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:22px">Isuzu FSR · departs 14:00</div>
+      <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:2px;height:14px"><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-text)"></span><span style="background:var(--color-accent)"></span><span style="border:1px solid var(--color-text)"></span></div>
+      <div style="font-size:13px">Abebe Kebede · Abay Transport · verified</div>
+      <span class="btn btn-primary" style="height:48px;font-size:16px">Request this truck</span>
+    </div>
+    <div class="card blueprint"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div style="display:flex;justify-content:space-between"><span class="tag tag-neutral">Dedicated</span><span style="font-family:var(--font-heading);font-weight:600;font-size:20px">ETB 9,800</span></div><div class="card-title">Mitsubishi Canter · 15:30</div><div class="card-meta">Via Kality Freight Brokerage</div></div>
+    <div class="card blueprint"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div style="display:flex;justify-content:space-between"><span class="tag tag-accent">Return load</span><span style="font-family:var(--font-heading);font-weight:600;font-size:20px">ETB 3,400</span></div><div class="card-title">Sinotruk · tomorrow 06:00</div><div class="card-meta">Yonas Girma · independent</div></div>
+  </div>
+</div>
+<div style="width:390px;height:844px;background:var(--color-bg);border:1px solid var(--color-divider);display:flex;flex-direction:column">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--color-divider)"><span style="font-size:14px">‹ Shipments</span><span class="text-muted" style="font-size:13px">RH-20931</span></div>
+  <div style="padding:20px 18px;display:flex;flex-direction:column;gap:16px">
+    <span class="tag" style="align-self:start;background:var(--color-accent);color:var(--color-bg)">In transit · ETA 16:45</span>
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:34px;line-height:1">Addis Ababa → Hawassa</div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:16px 1fr auto;gap:12px;padding:10px 0;border-bottom:1px solid var(--color-divider);align-items:center"><span style="width:10px;height:10px;background:{{ s.dot }};border:1px solid var(--color-text)"></span><span style="font-size:15px;color:{{ s.c }}">{{ s.label }}</span><span class="text-muted" style="font-size:12px">{{ s.time }}</span></div></sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><span class="btn btn-secondary" style="height:48px">Call driver</span><span class="btn btn-secondary" style="height:48px">Message</span></div>
+  </div>
+</div>
+</div></figure>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const mk = (labels, a) => labels.map((label, i) => ({ label, c: i === a ? 'var(--color-accent-800)' : 'var(--color-text)', bg: i === a ? 'var(--color-accent-100)' : 'transparent', sh: i === a ? 'inset 2px 0 0 var(--color-accent)' : 'none' }));
+    const L = ['Overview', 'New shipment', 'Shipments', 'Receivers', 'Team & roles', 'Payments'];
+    const cells = (own, match, total = 10) => Array.from({ length: total }, (_, i) => i < own ? { bg: 'var(--color-text)', b: 'var(--color-text)' } : i < own + match ? { bg: 'var(--color-accent)', b: 'var(--color-accent)' } : { bg: 'transparent', b: 'var(--color-neutral-500)' });
+    const st = (n, label, time, done, cur) => ({ n, label, time, c: done || cur ? 'var(--color-text)' : 'var(--color-neutral-500)', sh: cur ? 'inset 0 -3px 0 var(--color-accent)' : 'none', dot: done ? 'var(--color-text)' : cur ? 'var(--color-accent)' : 'transparent' });
+    return {
+      nav: mk(L, 1), nav2: mk(L, 2),
+      options: [
+        { badge: 'Best fit · fills free space', tag: 'tag-accent', source: 'Shared load', truck: 'Isuzu FSR · 10 t dry box', driver: 'Abebe Kebede · Abay Transport S.C. · verified', cap: '8 t on board', free: '2 t free → 1.2 t after', cells: cells(8, 1), when: 'Departs Kality 14:00 today · arrives ~19:00', price: '4,200', btn: 'btn-primary', cta: 'Request booking', border: 'var(--color-accent)' },
+        { badge: 'Return load', tag: 'tag-accent', source: 'Heading home', truck: 'Sinotruk Howo · 15 t', driver: 'Yonas Girma · independent owner-driver', cap: 'Empty return to Hawassa', free: '15 t free', cells: cells(0, 1), when: 'Departs tomorrow 06:00', price: '3,400', btn: 'btn-secondary', cta: 'Request booking', border: 'var(--color-divider)' },
+        { badge: 'Dedicated truck', tag: 'tag-neutral', source: 'Via Kality Freight Brokerage', truck: 'Mitsubishi Canter · 3.5 t', driver: 'Dispatcher: Selamawit Tadesse', cap: 'Whole truck', free: '3.5 t free', cells: cells(0, 2), when: 'Departs 15:30 today', price: '9,800', btn: 'btn-secondary', cta: 'Request booking', border: 'var(--color-divider)' }
+      ],
+      steps: [st('01', 'Requested', 'Mes 27 · 09:12', true), st('02', 'Matched', '09:40 · Abay Transport', true), st('03', 'Picked up', '12:04 · photo', true), st('04', 'In transit', 'Ziway · 11:52', false, true), st('05', 'Delivered', 'PIN pending', false)],
+      msgs: [
+        { text: 'Loaded 32 sacks. Leaving Kality now.', meta: 'Abebe · via app · 12:06', align: 'flex-start', bg: 'transparent', c: 'var(--color-text)' },
+        { text: 'Thank you. Hana will be at the shop until 18:00.', meta: 'Tigist · 12:10', align: 'flex-end', bg: 'var(--color-accent-100)', c: 'var(--color-accent-900)' },
+        { text: 'Passed Ziway. Expect 16:45.', meta: 'Abebe · via Telegram · 11:52', align: 'flex-start', bg: 'transparent', c: 'var(--color-text)' },
+        { text: 'Driver checked in at Ziway.', meta: 'Raha · automatic', align: 'center', bg: 'var(--color-surface)', c: 'var(--color-neutral-700)' }
+      ],
+      rows: [
+        { id: 'RH-20931', route: 'Addis → Hawassa', cargo: 'Flour · 800 kg', prov: 'Abay Transport', status: 'In transit', tag: '', bg: 'var(--color-accent)', c: 'var(--color-bg)', price: 'ETB 4,200' },
+        { id: 'RH-20944', route: 'Addis → Bahir Dar', cargo: 'Pasta · 3 t', prov: 'Kality Freight', status: 'Matched', tag: 'tag-accent', bg: '', c: '', price: 'ETB 14,600' },
+        { id: 'RH-20950', route: 'Addis → Adama', cargo: 'Flour · 1.2 t', prov: '—', status: 'Open', tag: 'tag-outline', bg: '', c: '', price: 'Quoting' },
+        { id: 'RH-20951', route: 'Addis → Dire Dawa', cargo: 'Oil · 5 t', prov: '—', status: 'Open', tag: 'tag-outline', bg: '', c: '', price: 'Quoting' },
+        { id: 'RH-20902', route: 'Addis → Mekelle', cargo: 'Flour · 6 t', prov: 'Tana Logistics', status: '⚑ Delay reported', tag: '', bg: 'var(--color-text)', c: 'var(--color-bg)', price: 'ETB 31,000' },
+        { id: 'RH-20877', route: 'Addis → Hawassa', cargo: 'Biscuits · 900 kg', prov: 'Yonas Girma', status: 'Delivered', tag: 'tag-neutral', bg: '', c: '', price: 'ETB 3,900' },
+        { id: 'RH-20861', route: 'Addis → Jimma', cargo: 'Flour · 2 t', prov: 'Abay Transport', status: 'Delivered', tag: 'tag-neutral', bg: '', c: '', price: 'ETB 8,700' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

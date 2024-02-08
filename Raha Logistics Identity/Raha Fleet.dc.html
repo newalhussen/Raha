@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/industry-37dc6a56-aa49-4d0d-8002-ef72d326eda5/styles.css">
+<script src="_ds/industry-37dc6a56-aa49-4d0d-8002-ef72d326eda5/_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--color-neutral-200)} a{color:var(--color-accent-700)} a:hover{color:var(--color-accent-900)}</style>
+</helmet>
+<div style="padding:48px;display:flex;flex-direction:column;gap:40px;font-family:var(--font-body);color:var(--color-text);width:max-content">
+<header style="display:flex;align-items:end;gap:48px">
+  <div><div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">D — Responsive web</div><h1 style="font-size:48px;margin:0;line-height:1">Raha for Fleets</h1></div>
+  <p style="margin:0;max-width:620px;font-size:15px;text-wrap:pretty">An owner sees every truck as a LoadLine: what it is carrying, where it is going and how much space is still unsold. The question the screen answers first is which trucks are running empty.</p>
+  <a href="Raha Index.dc.html" style="font-size:13px">Ecosystem index</a>
+</header>
+<div style="display:flex;gap:40px;flex-wrap:wrap;align-items:start">
+
+<figure data-screen-label="F1 Fleet overview" style="margin:0;display:flex;flex-direction:column;gap:12px">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">F1 · Fleet overview · 1440</figcaption>
+<div style="width:1440px;height:900px;background:var(--color-bg);border:1px solid var(--color-divider);display:grid;grid-template-columns:232px 1fr">
+  <aside style="border-right:1px solid var(--color-divider);display:flex;flex-direction:column;padding:20px 0">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 20px 20px"><svg viewBox="0 0 24 24" width="20" height="20" fill="var(--color-text)"><rect x="0" y="0" width="8" height="24"></rect><rect x="10" y="0" width="14" height="11" fill="var(--color-accent)"></rect><path d="M10 13H16.5L24 24H17.5Z"></path></svg><span style="font-family:var(--font-heading);font-weight:600;font-size:19px;letter-spacing:0.12em">RAHA</span></div>
+    <div style="margin:0 12px 16px;padding:10px 12px;border:1px solid var(--color-divider);display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:500">Abay Transport S.C.</span><span class="text-muted" style="font-size:12px">Fleet · Meron Asfaw, Owner</span></div>
+    <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6"><div style="padding:10px 20px;font-size:14px;display:flex;justify-content:space-between;color:{{ n.c }};background:{{ n.bg }};box-shadow:{{ n.sh }}"><span>{{ n.label }}</span><span class="text-muted">{{ n.count }}</span></div></sc-for>
+    <div style="margin:auto 12px 0;padding:12px;border:1px solid var(--color-divider);font-size:12px;display:flex;flex-direction:column;gap:4px"><strong style="font-size:13px">Team</strong><span>Meron Asfaw · Owner</span><span>Kebede Lemma · Fleet manager</span><span class="text-muted">14 drivers</span></div>
+  </aside>
+  <main style="padding:24px 28px;display:flex;flex-direction:column;gap:20px;min-width:0">
+    <div style="display:flex;justify-content:space-between;align-items:end"><div><div class="text-muted" style="font-size:13px">Tuesday, Meskerem 27</div><h2 style="font-size:36px;margin:2px 0 0;line-height:1">12 trucks · 4.6 t unsold space on the road</h2></div><span class="btn btn-primary blueprint"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Publish free space to Raha</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--color-divider)">
+      <div style="padding:14px 16px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">On trip</div><div style="font-family:var(--font-heading);font-weight:600;font-size:30px">7</div></div>
+      <div style="padding:14px 16px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Available in Addis</div><div style="font-family:var(--font-heading);font-weight:600;font-size:30px">3</div></div>
+      <div style="padding:14px 16px;border-right:1px solid var(--color-divider)"><div class="text-muted" style="font-size:12px">Empty return km this month</div><div style="font-family:var(--font-heading);font-weight:600;font-size:30px">2,140 <span style="font-size:15px;color:var(--color-accent-700)">−38% vs Nehase</span></div></div>
+      <div style="padding:14px 16px"><div class="text-muted" style="font-size:12px">Raha revenue this month</div><div style="font-family:var(--font-heading);font-weight:600;font-size:30px">ETB 412,300</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px">
+      <sc-for list="{{ trucks }}" as="t" hint-placeholder-count="6">
+        <div class="blueprint" style="padding:16px;display:flex;flex-direction:column;gap:10px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--font-heading);font-weight:600;font-size:18px">{{ t.plate }}</span><span class="tag {{ t.tag }}" style="background:{{ t.bg }};color:{{ t.c }}">{{ t.status }}</span></div>
+          <div style="font-size:13px">{{ t.model }} · {{ t.driver }}</div>
+          <div style="font-family:var(--font-heading);font-weight:600;font-size:20px">{{ t.route }}</div>
+          <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:2px;height:12px"><sc-for list="{{ t.cells }}" as="c"><span style="background:{{ c.bg }};border:1px solid {{ c.b }}"></span></sc-for></div>
+          <div style="display:flex;justify-content:space-between;font-size:12px"><span class="text-muted">{{ t.load }}</span><span style="color:var(--color-accent-700)">{{ t.free }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+</div></figure>
+
+<figure data-screen-label="F2 Drivers and assignment" style="margin:0;display:flex;flex-direction:column;gap:12px">
+<figcaption style="font-family:var(--font-heading);font-size:15px;font-weight:600;color:var(--color-text)">F2 · Drivers and assignments · 1024</figcaption>
+<div style="width:1024px;background:var(--color-bg);border:1px solid var(--color-divider);display:flex;flex-direction:column">
+  <div style="padding:20px 24px;display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--color-divider)"><div><h2 style="font-size:30px;margin:0">Drivers</h2><div class="text-muted" style="font-size:13px">14 drivers · 12 verified · 2 documents pending</div></div><span class="btn btn-secondary">+ Invite driver by SMS</span></div>
+  <table class="table">
+    <thead><tr><th style="padding-left:24px">Driver</th><th>Assigned truck</th><th>Status</th><th>App</th><th>Trips (30d)</th><th style="padding-right:24px">Verification</th></tr></thead>
+    <tbody><sc-for list="{{ drivers }}" as="d" hint-placeholder-count="6"><tr><td style="padding-left:24px"><div style="font-weight:500">{{ d.name }}</div><div class="text-muted" style="font-size:12px">{{ d.phone }}</div></td><td>{{ d.truck }}</td><td><span class="tag {{ d.tag }}">{{ d.status }}</span></td><td class="text-muted">{{ d.app }}</td><td>{{ d.trips }}</td><td style="padding-right:24px">{{ d.ver }}</td></tr></sc-for></tbody>
+  </table>
+  <div style="margin:20px 24px 24px;padding:18px;border:1px solid var(--color-accent);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center">
+    <div><div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">Return-load opportunity</div><div style="font-family:var(--font-heading);font-weight:600;font-size:22px">3-A 21987 AA reaches Hawassa 17:00 and has nothing booked back</div><div style="font-size:13px">Sidama Coffee Union needs 7.5 t to Addis tomorrow 07:00 · ETB 11,500</div></div>
+    <span class="btn btn-primary">Offer to Mulugeta</span>
+  </div>
+</div></figure>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const L = [['Overview', ''], ['Trucks', '12'], ['Drivers', '14'], ['Trips', '7'], ['Free space', '5'], ['Payments', '']];
+    const nav = L.map(([label, count], i) => ({ label, count, c: i === 0 ? 'var(--color-accent-800)' : 'var(--color-text)', bg: i === 0 ? 'var(--color-accent-100)' : 'transparent', sh: i === 0 ? 'inset 2px 0 0 var(--color-accent)' : 'none' }));
+    const cells = (own, match) => Array.from({ length: 10 }, (_, i) => i < own ? { bg: 'var(--color-text)', b: 'var(--color-text)' } : i < own + match ? { bg: 'var(--color-accent)', b: 'var(--color-accent)' } : { bg: 'transparent', b: 'var(--color-neutral-500)' });
+    const S = { transit: ['', 'var(--color-accent)', 'var(--color-bg)'], avail: ['tag-outline', '', ''], issue: ['', 'var(--color-text)', 'var(--color-bg)'], idle: ['tag-neutral', '', ''] };
+    const t = (plate, model, driver, route, status, k, own, match, load, free) => ({ plate, model, driver, route, status, tag: S[k][0], bg: S[k][1], c: S[k][2], cells: cells(own, match), load, free });
+    return {
+      nav,
+      trucks: [
+        t('3-B 48213 AA', 'Isuzu FSR 10 t', 'Abebe K.', 'Addis → Hawassa', 'In transit', 'transit', 8, 1, '8 t own + 0.8 t Raha', '1.2 t free'),
+        t('3-A 21987 AA', 'Isuzu FSR 10 t', 'Mulugeta B.', 'Addis → Hawassa', 'In transit', 'transit', 10, 0, 'Full', 'No return load yet'),
+        t('3-B 50122 AA', 'Sinotruk 15 t', 'Tesfaye W.', 'Addis → Arba Minch', 'Loading', 'transit', 6, 2, '6 t own + 2 t Raha', '7 t free'),
+        t('3-C 11804 OR', 'Mercedes Actros 25 t', 'Dereje A.', 'Modjo → Djibouti', '⚑ Customs hold', 'issue', 10, 0, 'Containers', 'Held at Galafi'),
+        t('3-A 33410 AA', 'Isuzu NPR 5 t', 'Bereket H.', 'Kality yard', 'Available', 'avail', 0, 0, 'Empty', '5 t free'),
+        t('3-B 47006 AA', 'Isuzu FSR 10 t', 'Unassigned', 'Kality yard', 'No driver', 'idle', 0, 0, 'Empty', 'Assign a driver')
+      ],
+      drivers: [
+        { name: 'Abebe Kebede', phone: '0912 34 56 78', truck: '3-B 48213 AA', status: 'On trip', tag: 'tag-accent', app: 'App · online', trips: 9, ver: '✓ Verified' },
+        { name: 'Mulugeta Bekele', phone: '0911 20 77 03', truck: '3-A 21987 AA', status: 'On trip', tag: 'tag-accent', app: 'SMS only', trips: 7, ver: '✓ Verified' },
+        { name: 'Tesfaye Wolde', phone: '0913 88 10 45', truck: '3-B 50122 AA', status: 'At pickup', tag: 'tag-accent', app: 'Telegram', trips: 6, ver: '✓ Verified' },
+        { name: 'Bereket Haile', phone: '0920 55 61 18', truck: '3-A 33410 AA', status: 'Available', tag: 'tag-outline', app: 'App · online', trips: 4, ver: '✓ Verified' },
+        { name: 'Samuel Girma', phone: '0930 12 44 90', truck: '—', status: 'Off duty', tag: 'tag-neutral', app: 'App · offline 2 d', trips: 0, ver: 'Licence pending' },
+        { name: 'Getachew Alemu', phone: '0916 02 39 71', truck: '—', status: 'Invited', tag: 'tag-neutral', app: 'Not installed', trips: 0, ver: 'Not started' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

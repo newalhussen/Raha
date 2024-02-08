@@ -1,0 +1,74 @@
+/* Reset, typography and layout utilities. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, p { margin: 0; }
+a { color: inherit; text-decoration-color: var(--amber); text-underline-offset: 3px; }
+a:hover { color: var(--accent-ink); }
+.theme-ops a:hover { color: var(--amber); }
+button { font: inherit; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+::selection { background: var(--amber); color: var(--basalt); }
+table { border-collapse: collapse; }
+[hidden] { display: none !important; }
+
+/* type roles */
+.display { font-family: var(--font-display); font-stretch: 118%; font-weight: 700; letter-spacing: -0.025em; line-height: 0.98; }
+.h1 { font-family: var(--font-display); font-stretch: 115%; font-weight: 700; font-size: clamp(28px, 3.4vw, 36px); letter-spacing: -0.02em; line-height: 1.05; }
+.h2 { font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; line-height: 1.1; }
+.h3 { font-family: var(--font-display); font-stretch: 110%; font-weight: 700; font-size: 17px; line-height: 1.2; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.mono-strong { font-family: var(--font-mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+.kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; }
+.kicker-amber { color: var(--accent-ink); }
+.theme-ops .kicker-amber { color: var(--amber); }
+.muted { color: var(--text-muted); }
+.soft { color: var(--ink-soft); }
+.small { font-size: 13px; }
+.xs { font-size: 12px; }
+.bold { font-weight: 700; }
+.semi { font-weight: 600; }
+.amharic { font-family: var(--font-ethiopic), var(--font-ui); }
+.nowrap { white-space: nowrap; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.right { text-align: right; }
+.center { text-align: center; }
+.balance { text-wrap: balance; }
+.pretty { text-wrap: pretty; }
+
+/* layout utilities */
+.row { display: flex; align-items: center; }
+.row-top { display: flex; align-items: flex-start; }
+.row-end { display: flex; align-items: flex-end; }
+.col { display: flex; flex-direction: column; }
+.wrap { flex-wrap: wrap; }
+.between { justify-content: space-between; }
+.end { justify-content: flex-end; }
+.grow { flex: 1; min-width: 0; }
+.none { flex: none; }
+.gap-2 { gap: 2px; } .gap-4 { gap: 4px; } .gap-6 { gap: 6px; } .gap-8 { gap: 8px; } .gap-10 { gap: 10px; } .gap-12 { gap: 12px; }
+.gap-14 { gap: 14px; } .gap-16 { gap: 16px; } .gap-20 { gap: 20px; } .gap-24 { gap: 24px; } .gap-32 { gap: 32px; } .gap-40 { gap: 40px; }
+.mt-4 { margin-top: 4px; } .mt-8 { margin-top: 8px; } .mt-12 { margin-top: 12px; } .mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; } .mt-auto { margin-top: auto; }
+.p-12 { padding: 12px; } .p-16 { padding: 16px; } .p-20 { padding: 20px; } .p-24 { padding: 24px; }
+.w-full { width: 100%; }
+.page { flex: 1; width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 32px 24px 72px; display: flex; flex-direction: column; gap: 28px; }
+.page-fluid { flex: 1; min-width: 0; padding: 24px 28px 64px; display: flex; flex-direction: column; gap: 24px; }
+.grid-auto { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); align-items: start; }
+.grid-2 { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); align-items: start; }
+.hide-sm { display: initial; }
+@media (max-width: 720px) {
+  .page { padding: 20px 16px 64px; gap: 22px; }
+  .page-fluid { padding: 18px 16px 56px; }
+  .hide-sm { display: none !important; }
+}
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }

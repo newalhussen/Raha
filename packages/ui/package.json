@@ -1,0 +1,29 @@
+{
+  "name": "@raha/ui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Raha design system for the web apps: tokens, global styles and React components (black + signal amber).",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles/index.css"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@raha/contracts": "*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "^15.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "typescript": "~5.8.3",
+    "@types/node": "^22.15.0"
+  }
+}

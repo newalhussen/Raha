@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4F1EA;-webkit-font-smoothing:antialiased} a{color:#15141A;text-decoration-color:#F2A516;text-underline-offset:3px} a:hover{color:#8A5A00}</style>
+</helmet>
+<div style="font-family:'Instrument Sans',sans-serif;color:#15141A;min-height:100vh;display:flex;flex-wrap:wrap">
+
+<aside style="width:220px;flex:none;background:#15141A;color:#F4F1EA;display:flex;flex-direction:column;gap:24px;padding:18px 12px;box-sizing:border-box;min-height:100vh">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px"><svg viewBox="0 0 48 48" width="24" height="24"><path d="M4 22A16 16 0 0 1 36 22Z" fill="#F2A516"></path><path d="M12 26A16 16 0 0 0 44 26Z" fill="#F4F1EA"></path></svg><span style="font-family:Archivo;font-stretch:125%;font-weight:700;font-size:19px">raha</span><span style="font-family:'JetBrains Mono';font-size:10px;color:#F2A516;margin-left:auto">BROKER</span></div>
+  <div style="background:#24232B;padding:10px;display:flex;gap:10px;align-items:center"><span style="width:32px;height:32px;background:#F2A516;color:#15141A;display:grid;place-items:center;font-weight:700;font-size:12px">YB</span><div style="line-height:1.25"><div style="font-size:13px;font-weight:600">Yonas Brokerage</div><div style="font-size:11px;color:#9A968C">Merkato · 4 dispatchers</div></div></div>
+  <nav style="display:flex;flex-direction:column;gap:2px;font-size:14px">
+    <span style="padding:10px;background:#2A2932;display:flex;justify-content:space-between;border-left:3px solid #F2A516">Match board<span style="font-family:'JetBrains Mono';font-size:12px;color:#F2A516">9</span></span>
+    <span style="padding:10px;color:#C9C4B8;display:flex;justify-content:space-between">Active trips<span style="font-family:'JetBrains Mono';font-size:12px">14</span></span>
+    <span style="padding:10px;color:#C9C4B8">Truck network</span>
+    <span style="padding:10px;color:#C9C4B8">Shippers</span>
+    <span style="padding:10px;color:#C9C4B8;display:flex;justify-content:space-between">Inbox<span style="font-family:'JetBrains Mono';font-size:12px">3</span></span>
+    <span style="padding:10px;color:#C9C4B8">Payments log</span>
+    <span style="padding:10px;color:#C9C4B8">Team</span>
+  </nav>
+  <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:0 8px;font-size:12px;color:#9A968C">
+    <span style="font-family:'JetBrains Mono';font-size:10px">DISPATCHERS ON SHIFT</span>
+    <span style="display:flex;justify-content:space-between"><span>Yonas M. · you</span><span style="color:#F2A516">●</span></span>
+    <span style="display:flex;justify-content:space-between"><span>Liya T.</span><span style="color:#F2A516">●</span></span>
+    <span style="display:flex;justify-content:space-between"><span>Samuel W.</span><span>○</span></span>
+  </div>
+</aside>
+
+<div style="flex:1;min-width:0;display:flex;flex-direction:column">
+  <header style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 24px;border-bottom:1px solid #E3DED3;background:#FBFAF7;flex-wrap:wrap">
+    <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><h1 style="margin:0;font-family:Archivo;font-stretch:115%;font-weight:700;font-size:24px;letter-spacing:-0.01em">Match board</h1><span style="font-size:13px;color:#6B675F">Thu 8 Oct · 9 open loads · 23 trucks with space</span></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><span style="height:38px;width:260px;border:1px solid #C9C4B8;background:#FFF;display:flex;align-items:center;padding:0 12px;font-size:13px;color:#6B675F">Search plate, shipper, RH-ID</span><button style="font:600 13px 'Instrument Sans';background:#15141A;color:#F4F1EA;border:0;height:38px;padding:0 14px">+ Log load from call</button></div>
+  </header>
+
+  <div style="flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:stretch">
+    <section style="border-right:1px solid #E3DED3;display:flex;flex-direction:column;min-width:0">
+      <div style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #E3DED3"><span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.04em;color:#6B675F">CARGO DEMAND · OPEN</span><span style="font-size:12px;color:#6B675F">Oldest first</span></div>
+      <sc-for list="{{ loads }}" as="l" hint-placeholder-count="6">
+        <div onClick="{{ l.pick }}" style="padding:14px 18px;border-bottom:1px solid #EDEAE2;display:flex;flex-direction:column;gap:6px;cursor:pointer;background:{{ l.bg }};border-left:4px solid {{ l.edge }}" style-hover="background:#FBFAF7">
+          <div style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:700;font-size:15px">{{ l.route }}</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600">{{ l.kg }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:8px;font-size:13px;color:#46433D"><span>{{ l.shipper }} · {{ l.cargo }}</span><span style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">{{ l.age }}</span></div>
+          <div style="display:flex;gap:6px;font-size:11px;font-weight:700"><span style="padding:3px 6px;background:#FCEBC4;color:#5E3E00">{{ l.fits }}</span><span style="padding:3px 6px;background:#EDEAE2;color:#46433D">{{ l.src }}</span></div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="border-right:1px solid #E3DED3;display:flex;flex-direction:column;min-width:0;background:#FBFAF7;grid-column:span 1">
+      <div style="padding:20px;border-bottom:1px solid #E3DED3;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><span style="font-family:'JetBrains Mono';font-size:12px;color:#6B675F">{{ sel.id }} · {{ sel.src }}</span><span style="font-size:12px;color:#6B675F">Assigned to you</span></div>
+        <div style="font-family:Archivo;font-stretch:115%;font-weight:700;font-size:26px;letter-spacing:-0.02em;line-height:1.05">{{ sel.route }}</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#E3DED3;border:1px solid #E3DED3;font-size:13px">
+          <div style="background:#FBFAF7;padding:10px"><div style="color:#6B675F">Weight</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:16px">{{ sel.kg }}</div></div>
+          <div style="background:#FBFAF7;padding:10px"><div style="color:#6B675F">Ready</div><div style="font-weight:600;font-size:14px">{{ sel.ready }}</div></div>
+          <div style="background:#FBFAF7;padding:10px"><div style="color:#6B675F">Shipper</div><div style="font-weight:600;font-size:14px">{{ sel.shipper }}</div></div>
+        </div>
+      </div>
+      <div style="padding:14px 20px;display:flex;justify-content:space-between;align-items:center"><span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.04em;color:#6B675F">TRUCKS WITH SPACE ON THIS CORRIDOR</span><span style="font-size:12px;color:#6B675F">Ranked by fit</span></div>
+      <div style="padding:0 20px 20px;display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ trucks }}" as="t" hint-placeholder-count="4">
+          <div style="background:#FFF;border:{{ t.border }};padding:14px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><div><div style="display:flex;gap:8px;align-items:center"><span style="font-family:'JetBrains Mono';font-weight:600;font-size:14px">{{ t.plate }}</span><span style="font-size:11px;font-weight:700;padding:2px 6px;background:{{ t.tagBg }}">{{ t.tag }}</span></div><div style="font-size:13px;color:#46433D;margin-top:3px">{{ t.driver }} · {{ t.owner }}</div></div><div style="text-align:right"><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px">{{ t.price }}</div><div style="font-size:11px;color:#6B675F">{{ t.margin }}</div></div></div>
+            <div style="display:flex;height:12px;gap:2px"><div style="flex:{{ t.used }};background:#15141A"></div><div style="flex:{{ t.mine }};background:#F2A516"></div><div style="flex:{{ t.free }};background:repeating-linear-gradient(135deg,#E3DED3 0 3px,transparent 3px 6px);border:1px dashed #C9C4B8"></div></div>
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><span style="font-size:12px;color:#46433D">{{ t.cap }}</span><div style="display:flex;gap:6px"><button style="font:600 12px 'Instrument Sans';background:transparent;border:1px solid #15141A;height:32px;padding:0 10px">Call</button><button style="font:700 12px 'Instrument Sans';background:{{ t.btn }};color:{{ t.btnFg }};border:0;height:32px;padding:0 12px">Offer load</button></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;min-width:0">
+      <div style="padding:14px 18px;border-bottom:1px solid #E3DED3;display:flex;justify-content:space-between"><span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.04em;color:#6B675F">ACTIVE TRIPS · 14</span><span style="font-size:12px;color:#B4410E;font-weight:600">2 need attention</span></div>
+      <sc-for list="{{ trips }}" as="t" hint-placeholder-count="5">
+        <div style="padding:12px 18px;border-bottom:1px solid #EDEAE2;display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:700;font-size:14px">{{ t.route }}</span><span style="font-size:11px;font-weight:700;color:{{ t.col }}">{{ t.state }}</span></div>
+          <div style="display:flex;height:4px;background:#EDEAE2"><div style="width:{{ t.pct }};background:#15141A"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:#6B675F"><span>{{ t.who }}</span><span style="font-family:'JetBrains Mono'">{{ t.last }}</span></div>
+        </div>
+      </sc-for>
+      <div style="padding:16px 18px;display:flex;flex-direction:column;gap:10px;border-top:1px solid #E3DED3;margin-top:auto;background:#FBFAF7">
+        <span style="font-family:'JetBrains Mono';font-size:11px;color:#6B675F">INBOX</span>
+        <div style="font-size:13px;line-height:1.45"><strong>Kassahun D.</strong> <span style="color:#6B675F">via Telegram · 2m</span><br>Truck 3-55102 free in Adama after 16:00, 7 t.</div>
+        <div style="font-size:13px;line-height:1.45"><strong>Habesha Cement</strong> <span style="color:#6B675F">· 18m</span><br>Need 2 more trucks to Hawassa tomorrow.</div>
+      </div>
+    </section>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sel: 0 };
+  renderVals() {
+    const L = [
+      { id: 'RH-24-08822', route: 'Addis Ababa → Hawassa', kg: '800 kg', shipper: 'Sheba Agro', cargo: 'Coffee', age: '42m', fits: '4 trucks fit', src: 'Raha app', ready: 'Today 10:00' },
+      { id: 'RH-24-08830', route: 'Adama → Dire Dawa', kg: '3,200 kg', shipper: 'Awash Mills', cargo: 'Flour', age: '1h 10m', fits: '2 trucks fit', src: 'Phone call', ready: 'Today 15:00' },
+      { id: 'RH-24-08833', route: 'Addis Ababa → Bahir Dar', kg: '1,500 kg', shipper: 'Tana Pharma', cargo: 'Medical supplies', age: '1h 32m', fits: '1 truck fits', src: 'Raha app', ready: 'Tomorrow 07:00' },
+      { id: 'RH-24-08835', route: 'Hawassa → Addis Ababa', kg: '6,000 kg', shipper: 'Hawassa IP · Ethio Textile', cargo: 'Textiles', age: '2h', fits: '3 return legs', src: 'Telegram', ready: 'Tomorrow 07:00' },
+      { id: 'RH-24-08838', route: 'Addis Ababa → Jimma', kg: '2,000 kg', shipper: 'Buna Bank branch fit-out', cargo: 'Furniture', age: '3h', fits: '1 truck fits', src: 'Raha app', ready: 'Sat 08:00' },
+      { id: 'RH-24-08841', route: 'Mekelle → Addis Ababa', kg: '9,000 kg', shipper: 'Messebo Cement', cargo: 'Cement', age: '4h', fits: '0 fit · find truck', src: 'Phone call', ready: 'Sat 06:00' },
+    ];
+    const sel = L[this.state.sel];
+    const T = [
+      { plate: '3-48213 AA', tag: 'SAME TRIP · 2 T SPARE', tagBg: '#F2A516', driver: 'Abebe Kebede', owner: 'Kebede Transport', used: 80, mine: 8, free: 12, cap: '10 t · 8 t aboard · departs 14:00', price: 'ETB 6,400', margin: 'your fee ETB 600', best: true },
+      { plate: '3-61190 OR', tag: 'EMPTY RETURN', tagBg: '#FCEBC4', driver: 'Meseret Tadesse', owner: 'own truck', used: 0, mine: 16, free: 84, cap: '5 t · empty back to Hawassa 13:00', price: 'ETB 7,100', margin: 'your fee ETB 700' },
+      { plate: '3-22874 AA', tag: 'PARTIAL', tagBg: '#EDEAE2', driver: 'Girma Bekele', owner: 'Selam Logistics', used: 55, mine: 8, free: 37, cap: '10 t · 5.5 t aboard · departs tomorrow', price: 'ETB 5,900', margin: 'your fee ETB 550' },
+      { plate: '3-30457 AA', tag: 'DEDICATED', tagBg: '#EDEAE2', driver: 'Biniyam Assefa', owner: 'Selam Logistics', used: 0, mine: 27, free: 73, cap: '3 t · available now', price: 'ETB 10,400', margin: 'your fee ETB 900' },
+    ].map(t => ({ ...t, border: t.best ? '2px solid #15141A' : '1px solid #E3DED3', btn: t.best ? '#F2A516' : '#15141A', btnFg: t.best ? '#15141A' : '#F4F1EA' }));
+    const trip = (route, who, last, pct, state, col) => ({ route, who, last, pct, state, col });
+    return {
+      loads: L.map((l, i) => ({ ...l, bg: i === this.state.sel ? '#FBFAF7' : 'transparent', edge: i === this.state.sel ? '#F2A516' : 'transparent', pick: () => this.setState({ sel: i }) })),
+      sel, trucks: T,
+      trips: [
+        trip('Addis → Dire Dawa', 'Dereje H. · 3-71820', 'Mieso 09:40', '70%', 'IN TRANSIT', '#3346B8'),
+        trip('Adama → Addis', 'Kassahun D. · 3-55102', 'no check-in 3h', '40%', 'LATE CHECK-IN', '#B4410E'),
+        trip('Addis → Bahir Dar', 'Mulugeta A. · 3-19944', 'Debre Markos 08:15', '62%', 'IN TRANSIT', '#3346B8'),
+        trip('Addis → Hawassa', 'Meron G. · 3-80031', 'at pickup 10:20', '8%', 'LOADING', '#8A5A00'),
+        trip('Dire Dawa → Addis', 'Fikru T. · 3-40298', 'PIN pending', '100%', 'AT RECEIVER', '#B4410E'),
+        trip('Addis → Jimma', 'Tsegaye L. · 3-66710', 'Weliso 07:50', '35%', 'IN TRANSIT', '#3346B8'),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
